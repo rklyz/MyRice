@@ -1,3 +1,3 @@
 <p align='center'>
-  <samp><h1>Welcome ~!</h1></samp>
+  <samp><b>Welcome ~!</b></samp>
 </p>
