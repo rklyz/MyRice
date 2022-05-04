@@ -1,3 +1,0 @@
-
-
-require "notifs.popup"
