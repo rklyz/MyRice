@@ -1,5 +1,5 @@
 <p align='center'>
-  <h2>Welcome ~!</h2><br>
+  <h2 align='center'>Welcome ~!</h2><br>
 </p>
 
 ## <samp>Details</samp> 
