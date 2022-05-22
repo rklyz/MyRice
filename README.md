@@ -22,4 +22,4 @@
 
 <h4>A quick instruction(s): Just put awesome's file in .config/</h4>
 
-<h4>To change walls, just put the dir in awesome/theme/theme.lua, theme.wallpaper = "<UR HOUSE>"</h4>
+<h4>To change walls, just put the dir in awesome/theme/theme.lua, theme.wallpaper = "Ur pfp.png"</h4>
