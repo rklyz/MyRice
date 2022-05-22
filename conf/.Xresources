@@ -1,0 +1,78 @@
+*.font: xft:JetBrainsMono NF:size=12,xft:icomoon:size=12, xft:DejaVu Sans:size=12
+URxvt.cursorBlink:                true
+URxvt.cursorUnderline:            true
+URxvt.saveLines:                  8192
+URxvt.scrollBar:                  false
+URxvt.scrollBar_right:            true
+URxvt.scrollBar_floating:         false
+URxvt.scrollstyle:                plain
+URxvt.scrollWithBuffer:           false
+URxvt.urgentOnBell:               false
+URxvt.depth:                      32
+URxvt.iso14755:                   false
+URxvt.pointerBlank:               true
+*.internalBorder: 20
+!URxvt.letterSpace: -1
+!
+!
+! URxvt Extensions
+URxvt.perl-ext-common:            default,tabbedex,url-select,font-size
+
+URxvt.keysym.Control-Right:     font-size:increase
+URxvt.keysym.Control-Left:   font-size:decrease
+URxvt.keysym.Control-Shift-Right:   font-size:incglobal
+URxvt.keysym.Control-Shift-Left: font-size:decglobal
+URxvt.keysym.Control-equal:  font-size:reset
+URxvt.keysym.Control-slash:  font-size:show
+
+URxvt.keysym.Control-Shift-C:     eval:selection_to_clipboard
+URxvt.keysym.Control-Shift-V:     eval:paste_clipboard
+URxvt.keysym.Control-Up:          eval:scroll_up 1
+URxvt.keysym.Control-Down:        eval:scroll_down 1
+URxvt.keysym.Control-Home:        eval:scroll_to_top
+URxvt.keysym.Control-End:         eval:scroll_to_bottom
+
+!-- decay palette --!
+#define decay_darker_bg   #13171b
+#define decay_bg          #0B151D
+#define decay_contrast_bg #1a1e24
+#define decay_lighter_bg  #21262e
+#define decay_fg          #b6beca
+#define decay_cursor      #b6beca
+
+#define decay_black         #242931
+#define decay_light_black   #485263
+#define decay_red           #e05f65
+#define decay_green         #78DBA9
+#define decay_yellow        #f1cf8a
+#define decay_orange        #e9a180
+#define decay_darker_blue   #4e88d4
+#define decay_contrast_blue #5f94da
+#define decay_blue          #70a5eb
+#define decay_aquamarine    #7ddac5
+#define decay_magenta       #c68aee
+#define decay_cyan          #74bee9
+#define decay_white         #dee1e6
+
+!-- colors assignment --!
+*.foreground:   decay_fg
+*.background:   decay_bg
+*.cursorColor:  decay_cursor
+
+*.color0: decay_black
+*.color1: decay_red
+*.color2: decay_green
+*.color3: decay_yellow
+*.color4: decay_blue
+*.color5: decay_magenta
+*.color6: decay_cyan
+*.color7: decay_white
+
+*.color8: decay_light_black
+*.color9: decay_red
+*.color10: decay_green
+*.color11: decay_yellow
+*.color12: decay_blue
+*.color13: decay_magenta
+*.color14: decay_cyan
+*.color15: decay_white
