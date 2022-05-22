@@ -6,6 +6,7 @@
   <samp><b>Details:</b></samp>
 </p>
 
+## Details
 - OS - Arch Linux
 - WM - Awesome
 - Term - URxvt
