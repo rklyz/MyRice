@@ -1,6 +1,6 @@
 <p align='center'>
   <h2 align='center'>
-    `Welcome ~!`
+    Welcome ~!
   </h2><br>
 </p>
 
