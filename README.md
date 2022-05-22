@@ -2,11 +2,7 @@
   <samp><b>Welcome ~!</b></samp><br>
 </p>
 
-<p>
-  <samp><b>Details:</b></samp>
-</p>
-
-## Details
+## <samp>Details</samp>
 - OS - Arch Linux
 - WM - Awesome
 - Term - URxvt
