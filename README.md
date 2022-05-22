@@ -7,3 +7,11 @@
 - **Term**  -   URxvt
 - **Comp**  -   Picom
 
+## <samp>Dependencies:</samp>
+
+- Awesome-git
+- inotify-utils
+- brightnessctl
+- pulseaudio
+- pactl
+- urxvt (change default terminal in "awesome/conf/init.lua")
