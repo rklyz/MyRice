@@ -7,7 +7,7 @@
 - **Term**  -   URxvt
 - **Comp**  -   Picom
 
-<br><br><br><br><br><br>
+<br><br><br>
 
 ## <samp>Dependencies:</samp>
 
