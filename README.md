@@ -18,7 +18,7 @@
 - pactl
 - urxvt (change default terminal in "awesome/conf/init.lua")
 
-## 🔧 <samp>Installation:</samp> <samp>I'll do it later on lol</samp>
+## 🔧 <samp>Installation:</samp>
 
 Firstly, clone the repository.
 
