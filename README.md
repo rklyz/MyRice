@@ -20,6 +20,11 @@
 
 ## 🔧 <samp>Installation:</samp> <samp>I'll do it later on lol</samp>
 
-<h4>A quick instruction(s): Just put awesome's file in .config/</h4>
+Firstly, clone the repository.
 
-<h4>To change walls, just put the dir in awesome/theme/theme.lua, theme.wallpaper = "Ur pfp.png"</h4>
+```
+sh
+$ git clone https://github.com/N3k0Ch4n/Another_dotfiles.git
+```
+
+Then, Copy and paste "Awesome" folder into ".config" folder.
