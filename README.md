@@ -11,6 +11,7 @@
 - **WM**   -   Awesome
 - **Term**  -   URxvt
 - **Comp**  -   Picom
+- **Resolution**  -  1920x1080
 
 <br><br><br>
 
