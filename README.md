@@ -27,3 +27,14 @@ $ git clone https://github.com/N3k0Ch4n/Another_dotfiles.git
 ```
 
 Then, Copy and paste "Awesome" folder into ".config" folder.
+
+```sh
+$ cd Another_dotfiles/conf
+$ cp -r awesome/ $HOME/.config/
+```
+
+Lastly, change the following variables suitable to your liking
+
+- Terminal (.config/awesome/conf/init.lua)
+- Wall (.config/awesome/theme/theme.lua)
+
