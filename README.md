@@ -53,5 +53,5 @@ Lastly, change the following variables suitable to your liking
 Search "theme.wallpaper" inside wall's file mentioned above
 
 ```lua
-theme.wallpaper = "your/wallpaper/location/Ur pfp.png"
+theme.wallpaper = "your/wallpaper/location/Ur_wall.png"
 ```
