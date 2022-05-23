@@ -17,8 +17,6 @@
 - **Comp**  -   Picom
 - **Resolution**  -  1920x1080
 
-<br><br><br>
-
 ## 🚀 <samp>DEPENDENCIES:</samp>
 
 - Awesome-git
