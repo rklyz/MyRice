@@ -1,5 +1,7 @@
 
-## <samp align='center'>Awesome's Dot</samp>
+<div align='center'>
+  <samp>My Awesome Dotfiles</samp>
+</div>
 
 
 ## 👀 <samp>DETAILS:</samp> 
