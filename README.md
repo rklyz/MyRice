@@ -1,6 +1,10 @@
 
 <div align='center'>
   <samp><h1>My Awesome(WM) Dotfiles</h1></samp>
+  
+  <p>
+    <a href="https://github.com/N3k0Ch4n/Another_dotfiles/stargazers"><img src="https://img.shields.io/github/stars/N3k0Ch4n/Another_dotfiles?colorA=151515&colorB=8C977D&style=for-the-badge"></a>
+  </p>
 </div>
 
 
