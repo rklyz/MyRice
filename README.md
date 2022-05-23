@@ -36,5 +36,10 @@ $ cp -r awesome/ $HOME/.config/
 Lastly, change the following variables suitable to your liking
 
 - Terminal (.config/awesome/conf/init.lua)
-- Wall (.config/awesome/theme/theme.lua)
+- Wall (.config/awesome/themes/theme.lua)
 
+<samp>Changing the wallpaper:</samp>
+
+```lua
+theme.wallpaper = "your/wallpaper/location/Ur pfp.png"
+```
