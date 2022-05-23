@@ -22,8 +22,7 @@
 
 Firstly, clone the repository.
 
-```
-sh
+```sh
 $ git clone https://github.com/N3k0Ch4n/Another_dotfiles.git
 ```
 
