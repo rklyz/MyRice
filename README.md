@@ -1,6 +1,6 @@
 
 <div align='center'>
-  <samp>My Awesome Dotfiles</samp>
+  <h1>My Awesome Dotfiles</h1>
 </div>
 
 
