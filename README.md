@@ -40,6 +40,8 @@ Lastly, change the following variables suitable to your liking
 
 <samp>Changing the wallpaper:</samp>
 
+Search "theme.wallpaper" inside wall's file mentioned above
+
 ```lua
 theme.wallpaper = "your/wallpaper/location/Ur pfp.png"
 ```
