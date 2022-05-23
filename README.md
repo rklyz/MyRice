@@ -38,6 +38,7 @@ Lastly, change the following variables suitable to your liking
 
 - Terminal (.config/awesome/conf/init.lua)
 - Wall (.config/awesome/themes/theme.lua)
+- Font (.config/awesome/themes/theme.lua)
 
 <samp>Changing the wallpaper:</samp>
 
