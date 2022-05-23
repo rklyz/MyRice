@@ -26,6 +26,7 @@
 - pactl
 - network-manager (I use this for the wifi)
 - urxvt (change default terminal in "awesome/conf/init.lua")
+- Roboto-Mono font
 
 ## 🔧 <samp>Installation:</samp>
 
