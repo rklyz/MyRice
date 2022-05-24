@@ -20,7 +20,7 @@
 ## 🚀 <samp>DEPENDENCIES:</samp>
 
 - Awesome-git
-- inotify-utils
+- inotify-tools
 - brightnessctl
 - pulseaudio
 - pactl
