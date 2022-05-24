@@ -58,5 +58,5 @@ theme.wallpaper = "your/wallpaper/location/Ur_wall.png"
 ```
 ## 🕷️ <samp>Known Bug:</samp>
 
-- Volume's Error at startup
+- Volume's Error at startup (just ignore it would ya?)
 
