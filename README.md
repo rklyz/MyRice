@@ -61,6 +61,11 @@ theme.wallpaper = "your/wallpaper/location/Ur_wall.png"
 
 - Volume's Error at startup (just ignore it would ya? ;) )
 
+## <samp>TODO:</samp>
+
+- Improved notification's appearance
+- Fix the bug ofc
+
 ## 💕 <samp>Credits:</samp>
 
 - [saimoomedits](https://github.com/saimoomedits/dotfiles) for the 'easy-to-understand' dotfiles
