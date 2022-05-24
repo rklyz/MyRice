@@ -60,7 +60,3 @@ theme.wallpaper = "your/wallpaper/location/Ur_wall.png"
 
 - Volume's Error at startup
 
-
-## ❤️ <samp>Credits to:</samp>
-
-- Everyone
