@@ -62,6 +62,6 @@ theme.wallpaper = "your/wallpaper/location/Ur_wall.png"
 
 ## 💕 <samp>Credits:</samp>
 
-- saimoomedits(https://github.com/saimoomedits/dotfiles) for the 'easy-to-understand' dotfiles
-- javacafe(https://github.com/JavaCafe01/dotfiles) for some stolen scripts ;)
-- justleoo(https://github.com/justleoo/dotfiles) for the Readme
+- [saimoomedits](https://github.com/saimoomedits/dotfiles) for the 'easy-to-understand' dotfiles
+- [javacafe](https://github.com/JavaCafe01/dotfiles) for some stolen scripts ;)
+- [justleoo](https://github.com/justleoo/dotfiles) for the Readme
