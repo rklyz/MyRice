@@ -60,3 +60,8 @@ theme.wallpaper = "your/wallpaper/location/Ur_wall.png"
 
 - Volume's Error at startup (just ignore it would ya?)
 
+## 💕 <samp>Credits:</samp>
+
+- saimoomedits(https://github.com/saimoomedits/dotfiles) for the 'easy-to-understand' dotfiles
+- javacafe(https://github.com/JavaCafe01/dotfiles) for some stolen scripts ;)
+- justleoo(https://github.com/justleoo/dotfiles) for the Readme
