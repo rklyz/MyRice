@@ -21,6 +21,7 @@
 
 - Awesome-git
 - inotify-tools
+- playerctl
 - brightnessctl
 - pulseaudio
 - pactl
