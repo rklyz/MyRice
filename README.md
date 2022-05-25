@@ -30,6 +30,8 @@
 
 ## 🔧 <samp>Installation:</samp>
 
+This may and may not work for some of ya'll. So, make sure to backup ur config before proceeding.
+
 Firstly, clone the repository.
 
 ```sh
@@ -40,7 +42,7 @@ Then, Copy and paste "Awesome" folder into ".config" folder.
 
 ```sh
 $ cd Another_dotfiles/conf
-$ cp -r awesome/ $HOME/.config/
+$ cp -r * $HOME/.config/
 ```
 
 Lastly, change the following variables suitable to your liking
