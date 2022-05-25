@@ -30,7 +30,7 @@
 
 ## 🔧 <samp>Installation:</samp>
 
-This may and may not work for some of ya'll. So, make sure to backup ur config before proceeding.
+**This may and may not work for some of ya'll. So, make sure to backup ur config before proceeding.**
 
 Firstly, clone the repository.
 
