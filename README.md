@@ -10,7 +10,7 @@
 ## <samp>Quick Look:</samp>
 Bar:
 <br>
-<img alt="bar" align="right" src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/bar.gif"/>
+<img alt="bar" align="right" width="700px" src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/bar.gif"/>
 
 
 ## 👀 <samp>DETAILS:</samp> 
