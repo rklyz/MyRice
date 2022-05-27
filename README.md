@@ -9,7 +9,7 @@
 
 
 ## 👀 <samp>DETAILS:</samp> 
-<img alt="rice" align="right" width="350px" src="https://i.redd.it/grap6cd8de191.png"/>
+<img alt="rice" align="right" width="400px" src="https://i.redd.it/grap6cd8de191.png"/>
 
 - **OS**   -   Arch Linux
 - **WM**   -   Awesome
