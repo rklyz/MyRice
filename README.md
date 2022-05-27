@@ -11,7 +11,7 @@
 * Bar
 <br>
 <img alt="bar" align="left" src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/bar.gif"/>
-* Popup
+* Popup (Not yet)
 <br>
 <img alt="Popup" align="left" src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/popup.gif"/>
 ## 👀 <samp>DETAILS:</samp> 
