@@ -8,13 +8,14 @@
 </div>
 
 ## <samp>Quick Look:</samp>
+Desktop:
+<img alt="rice" align="right" width="400px" src="https://i.redd.it/grap6cd8de191.png"/>
 Bar:
 <br>
-<img alt="bar" align="right" width="700px" src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/bar.gif"/>
+<img alt="bar" align="right" src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/bar.gif"/>
 
 
 ## 👀 <samp>DETAILS:</samp> 
-<img alt="rice" align="right" width="400px" src="https://i.redd.it/grap6cd8de191.png"/>
 
 - **OS**   -   Arch Linux
 - **WM**   -   Awesome
