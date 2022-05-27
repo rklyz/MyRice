@@ -9,6 +9,7 @@
 
 ## <samp>Quick Look:</samp>
 Desktop:
+<br>
 <img alt="rice" align="right" width="400px" src="https://i.redd.it/grap6cd8de191.png"/>
 Bar:
 <br>
