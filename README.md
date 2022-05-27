@@ -24,7 +24,7 @@
 
 <br>
 
-<img alt="Popup" align="left" src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/popup.gif"/>
+<img alt="Popup" align="left" src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/pop.gif"/>
   
 </details>
 
