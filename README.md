@@ -10,7 +10,6 @@
 
 ## 👀 <samp>DETAILS:</samp> 
 <img alt="rice" align="right" width="400px" src="https://i.redd.it/grap6cd8de191.png"/>
-<img alt="bar" align="right" width="100px" src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/bar.gif"/>
 
 - **OS**   -   Arch Linux
 - **WM**   -   Awesome
@@ -19,6 +18,7 @@
 - **Resolution**  -  1920x1080
 
 ## 🚀 <samp>DEPENDENCIES:</samp>
+<img alt="bar" align="right" width="100px" src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/bar.gif"/>
 
 - Awesome-git
 - inotify-tools
