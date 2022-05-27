@@ -10,14 +10,17 @@
 ## <samp>Quick Look:</samp>
 
 <details close>
+  <summary><samp>Open</samp></summary>
+  
+<br>
 
-*Bar
+* Bar
 
 <br>
 
 <img alt="bar" align="left" src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/bar.gif"/>
 
-*Popup
+* Popup
 
 <br>
 
