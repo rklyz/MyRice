@@ -67,6 +67,7 @@ Then, Copy and paste "Awesome" folder into ".config" folder.
 $ cd Another_dotfiles/
 $ cp -rf /conf/awesome $HOME/.config/
 $ cp -rf /conf/picom $HOME/.config/
+$ cp -rf /conf/.Xresources $HOME/
 $ cp -rf /fonts/* $HOME/.local/share/fonts/
 ```
 
