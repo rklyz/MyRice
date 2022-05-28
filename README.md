@@ -64,8 +64,10 @@ $ git clone https://github.com/N3k0Ch4n/Another_dotfiles.git
 Then, Copy and paste "Awesome" folder into ".config" folder.
 
 ```sh
-$ cd Another_dotfiles/conf
-$ cp -r * $HOME/.config/
+$ cd Another_dotfiles/
+$ cp -rf /conf/awesome $HOME/.config/
+$ cp -rf /conf/picom $HOME/.config/
+$ cp -rf /fonts/* $HOME/.local/share/fonts/
 ```
 
 Lastly, change the following variables suitable to your liking
