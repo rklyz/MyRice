@@ -94,8 +94,9 @@ theme.wallpaper = "your/wallpaper/location/Ur_wall.png"
 - Improved notification's appearance
 - Fix the bug ofc
 
-## 💕 <samp>Credits:</samp>
+## 💕 <samp>Credits to:</samp>
 
 - [saimoomedits](https://github.com/saimoomedits/dotfiles) for the 'easy-to-understand' dotfiles
 - [javacafe](https://github.com/JavaCafe01/dotfiles) for some stolen scripts ;)
 - [justleoo](https://github.com/justleoo/dotfiles) & [kizu](https://github.com/janleigh/dotfiles) for the Readme
+- And.. Everyonee <3
