@@ -40,6 +40,20 @@ $ cd ..; cp -rf misc/fonts/* $HOME/.local/share/fonts/
 
 <img src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/github/scr.png">
 
+<br>
+
+### For the keybind, uhm..
+
+| Keybinds    | Uses     |
+| ----------- | -------- |
+| Mod + Enter | Terminal |
+| Mod + Space | Layout   |
+| Mod + r     | Rofi      |
+| alt + c     | Sidebar  |
+| alt + x     | Powermenu|
+
+**It's not done yet..**
+
 ### Million of Thanks to 💕
 
 - [Saimoom/Harry](https://github.com/saimoomedits/dotfiles)
