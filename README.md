@@ -22,7 +22,7 @@ Note that I haven't test these scripts yet hehe
 
 **1. Install all the dependencies**
 
-<details close><summary>Pottential dependencies:</summary>
+<details close><summary>Pottential dependencies</summary>
   
   - [awesome-git](https://aur.archlinux.org/packages/awesome-git)
   - [mpd-mpris](https://github.com/natsukagami/mpd-mpris)
