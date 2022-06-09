@@ -35,6 +35,7 @@ Note that I haven't test these scripts yet hehe
   - rxvt-unicode
   - mpd
   - ncmpcpp
+  - [Material Design Icons](https://materialdesignicons.com/)
 
 And some others I dont remember
 </details>
