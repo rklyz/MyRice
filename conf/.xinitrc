@@ -1,7 +1,8 @@
 xrdb -merge $HOME/.Xresources &
-bash $HOME/.local/bin/mouseaccel.sh
+bash $HOME/.local/bin/mouseaccel.sh &
 
-mpd &
+
+$HOME/go/bin/mpd-mpris -host localhost &
 
 playerctld daemon &
 

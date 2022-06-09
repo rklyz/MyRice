@@ -48,4 +48,11 @@ ruled.client.connect_signal("request::rules", function()
 		tag = screen[1].tags[5]
 	}
     }
+
+    ruled.client.append_rule {
+	rule = { class = "Spotify" },
+	properties = {
+		tag = screen[1].tags[4]
+	}
+    }
 end)

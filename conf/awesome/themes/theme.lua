@@ -6,20 +6,24 @@ local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local rnotification = require("ruled.notification")
 local dpi = xresources.apply_dpi
-
+local gears = require "gears"
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_configuration_dir() .. "themes/"
 local walls_path = "~/.local/pictures/Walls/"
 
 local theme = {}
 
+----- User -----
+
+theme.pfp = themes_path .. "pfp.jpg"
+theme.user = "Neko"
+theme.hostname = "@Neptune"
+
 ----- Font -----
 
-theme.font = "JetBrainsMono NF 14"
-theme.font_name = "JetBrainsMono NF"
+theme.font = "CaskaydiaCove Nerd Font 14"
+theme.font_name = "CaskaydiaCove Nerd Font"
 theme.font_size = "14"
-
-
 
 ----- General/default Settings -----
 
@@ -37,16 +41,13 @@ theme.fg_minimize   = theme.fg_normal
 theme.useless_gap         = dpi(20)
 theme.border_width        = dpi(0)
 
-
-
 ----- Colors -----
 
-theme.blue = "#70a5eb"
-theme.yellow = "#f1cf8a"
-theme.green = "#78DBA9"
-theme.red = "#e05f65"
-theme.lavender = "#908ED5"
-theme.crayola = "#C6D2ED"
+theme.blue = "#6A9FB8"
+theme.yellow = "#C7B079"
+theme.green = "#5CB574"
+theme.red = "#BD6B64"
+theme.magenta = "#A6729F"
 
 
 ----- Bar -----
@@ -54,20 +55,29 @@ theme.crayola = "#C6D2ED"
 theme.bar = "#0B151D"
 theme.bar_alt = "#212331"
 
-theme.menu_height = dpi(25)
-theme.menu_width  = dpi(200)
-
-theme.taglist_fg_focus = theme.fg_normal
+theme.taglist_fg_focus = "#ac8aac"
 theme.taglist_fg_occupied = theme.fg_normal
 theme.taglist_fg_empty = "#404B66"
 theme.taglist_bg_focus = theme.blue
 
-theme.tasklist_fg_focus = theme.crayola
+theme.tasklist_fg_focus = theme.fg_normal
 
 
 theme.titlebar_bg_normal = theme.bar
-theme.titlebar_bg_focus = theme.bar_alt
+theme.titlebar_bg_focus = theme.bar
 
+
+
+----- Menu -----
+
+theme.menu_height = dpi(35)
+theme.menu_width  = dpi(200)
+theme.menu_fg_focus = theme.fg_normal
+theme.menu_fg_normal = theme.taglist_fg_empty
+theme.menu_bg_focus = theme.bar_alt
+theme.menu_bg_normal = theme.bar
+theme.submenu = ""
+theme.menu_font = theme.font_name .. " 12"
 
 -- You can add as many variables as
 -- you wish and access them by using
@@ -101,7 +111,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = walls_path .. "room.jpg"
+theme.wallpaper =  walls_path .. "japan.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."layouts/fairhw.png"

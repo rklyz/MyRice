@@ -5,20 +5,24 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 
+local rubato = require "lib.rubato"
+
 ----- Bar -----
-
-
 
 screen.connect_signal("request::desktop_decoration", function(s)
     -- Each screen has its own tag table.
-    awful.tag({ "一", "二", "三", "四", "五" }, s, awful.layout.layouts[1])
+    awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
 
 	----- Making Variables -----
 	
 	-- Time
 
 	local hour = wibox.widget {
-		font = beautiful.font_name .. " " .. "14",
+		widget = wibox.widget.textbox,
+	}
+
+	local icon = wibox.widget {
+		markup = "<span foreground='" .. beautiful.magenta .. "'></span>",
 		widget = wibox.widget.textbox,
 	}
 
@@ -26,23 +30,23 @@ screen.connect_signal("request::desktop_decoration", function(s)
 		{
 			{
 				hour,
-				spacing = dpi(6),
+				spacing = dpi(4),
 				layout = wibox.layout.fixed.horizontal,
 			},
-			margins = dpi(4),
+			margins = {top=dpi(4), bottom=dpi(4), left=dpi(9), right=dpi(9)},
 			widget = wibox.container.margin,
 		},
 		shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,5) end,
-		bg = beautiful.bar,
+		bg = beautiful.bar_alt,
 		widget = wibox.container.background,
 	}
 
-	local set_clock = function()
+	local set_clock = function() -- Update the value of the clock
 		_ = os.date("%H:%M")
-		hour.markup = "<span foreground='" .. beautiful.crayola .. "'>" .. _ .. "</span>"
+		hour.markup = "<span foreground='" .. beautiful.fg_normal .. "'>" .. _ .. "</span>"
 	end
 
-	local update_clock = gears.timer {
+	local update_clock = gears.timer { -- Timer every 5 sec
 		timeout = 5,
 		autostart = true,
 		call_now = true,
@@ -73,149 +77,116 @@ screen.connect_signal("request::desktop_decoration", function(s)
 		widget = wibox.container.background,
 	}
 
-	-- Volume
+	-- Volume's arc
 	
-	local volume = wibox.widget {
+	local vol_arc = wibox.widget {
 		{
 			{
-				{
-					id = "vol_icon",
-					markup = "<span foreground='" .. beautiful.blue .. "'></span>",
-                			widget = wibox.widget.textbox,
-				},
-				{
-					id = "value",
-					markup = "",
-					widget = wibox.widget.textbox,
-				},
-				spacing = dpi(4),
-				id = "vol_layout",
-				layout = wibox.layout.fixed.horizontal,
+				id = 'value',
+				min_value = 0,
+				max_value = 100,
+				rounded_edge = false,
+				thickness = dpi(5),
+				start_angle = math.pi,
+				value = 60,
+				colors = {beautiful.blue},
+				widget = wibox.container.arcchart,
 			},
-			id = "container",
 			margins = dpi(6),
 			widget = wibox.container.margin,
 		},
-		shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,5) end,
-		bg = beautiful.bar_alt,
+		bg = beautiful.bar,
 		widget = wibox.container.background,
 	}
 
-	awesome.connect_signal("signal::volume", function(vol,mute)
+	local vol_slide = rubato.timed {
+                intro = 0.2,
+                duration = 0.5,
+                subscribed = function(pos)
+                        vol_arc:get_children_by_id("value")[1].value = pos
+                end
+        }
 
-		volume.container.vol_layout.value.markup = "<span foreground='" .. beautiful.blue .. "'>" .. vol .. "%</span>"
+	awesome.connect_signal("signal::volume", function(vol, mute)
 
 		if mute or vol == 0 then
-			volume.container.vol_layout.vol_icon.markup = "<span foreground='" .. beautiful.blue .. "'></span>"
+			vol_slide.target = 0 
 		else
-			if tonumber(vol) > 79 then
-				volume.container.vol_layout.vol_icon.markup = "<span foreground='" .. beautiful.blue .. "'></span>"
-			elseif tonumber(vol) >= 1 then
-				volume.container.vol_layout.vol_icon.markup = "<span foreground='" .. beautiful.blue .. "'></span>"
-			else
-				volume.container.vol_layout.vol_icon.markup = "<span foreground='" .. beautiful.blue .. "'></span>"
-			end
+			vol_slide.target = vol or 0
 		end
 	end)
 
-	-- Brightness 
+	-- Brightness's arc
 	
-	local bright = wibox.widget {
+	local bri_arc = wibox.widget {
 		{
 			{
-				{
-					id = "bri_icon",
-                                        markup = "<span foreground='" .. beautiful.yellow .. "'></span>",
-                                        widget = wibox.widget.textbox
-				},
-				{
-					id = "value",
-					markup = "<span foreground='" .. beautiful.yellow .. "'></span>",
-					widget = wibox.widget.textbox
-				},
-				id = "bri_layout",
-				spacing = dpi(4),
-				layout = wibox.layout.fixed.horizontal,
+				id = 'value',
+                                min_value = 0,
+                                max_value = 60,
+                                rounded_edge = false,
+                                thickness = dpi(5),
+                                start_angle = math.pi,
+                                value = 60,
+                                colors = {beautiful.yellow},
+                                widget = wibox.container.arcchart,
 			},
-			id = "container",
 			margins = dpi(6),
 			widget = wibox.container.margin,
 		},
-		shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,5) end,
-		bg = beautiful.bar_alt,
+		bg = beautiful.bar,
 		widget = wibox.container.background,
 	}
 
+	local bri_slide = rubato.timed {
+                intro = 0.2,
+                duration = 0.5,
+                subscribed = function(pos)
+                        bri_arc:get_children_by_id("value")[1].value = pos
+                end
+        }
+
 	awesome.connect_signal("signal::brightness", function(bri)
+		bri_slide.target = bri
+	end)
 
-		_ = tostring(bri)
-		bri_val = _:match("(%d+)[.]")
-
-		bright.container.bri_layout.value.markup = "<span foreground='" .. beautiful.yellow .. "'>" .. bri_val .."%</span>"
-
-		if tonumber(os.date("%H")) < 7 then
-			bright.container.bri_layout.bri_icon.markup = "<span foreground='" .. beautiful.yellow .. "'></span>"
-		elseif tonumber(os.date("%H")) < 19 then
-			bright.container.bri_layout.bri_icon.markup = "<span foreground='" .. beautiful.yellow .. "'></span>"
-		else
-			bright.container.bri_layout.bri_icon.markup = "<span foreground='" .. beautiful.yellow .. "'></span>"
-		end
-        end)
-
-	-- Wifi
+	-- Network
 	
 	local wifi = wibox.widget {
 		{
-                        {
-                                {
-                                        id = "wifi_icon",
-                                        markup = "<span foreground='" .. beautiful.red .. "'></span>",
-                                        widget = wibox.widget.textbox
-                                },
-				{
-                                        id = "ssid",
-                                        markup = "<span foreground='" .. beautiful.red .. "'></span>",
-                                        widget = wibox.widget.textbox
-                                },
-				spacing = dpi(4),
-                                id = "wifi_layout",
-                                layout = wibox.layout.fixed.horizontal,
-                        },
-                        id = "container",
-                        margins = dpi(6),
-                        widget = wibox.container.margin,
-                },
-		shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,5) end,
-                bg = beautiful.bar_alt,
-                widget = wibox.container.background
+			{
+				id = "icon",
+				markup = "",
+				widget = wibox.widget.textbox,
+			},
+			margins = dpi(6),
+			widget = wibox.container.margin,
+		},
+		bg = beautiful.bar,
+		widget = wibox.container.background,
 	}
 
-	-- Connect signal named "signal::wifi"
 	awesome.connect_signal("signal::wifi", function(stat, ssid)
-
-		net_ssid = ssid:match(".[^:]+")
-
-		if not stat then
-			wifi.container.wifi_layout.wifi_icon.markup = "<span foreground='" .. beautiful.red .. "'></span>"
-			wifi.container.wifi_layout.ssid.markup = "<span foreground='" .. beautiful.red .. "'>".. net_ssid .."</span>"
+		if stat then
+			wifi:get_children_by_id("icon")[1].markup = "<span foreground='" .. beautiful.green .. "'></span>"
 		else
-			wifi.container.wifi_layout.wifi_icon.markup = "<span foreground='" .. beautiful.green .. "'></span>"
-			wifi.container.wifi_layout.ssid.markup = "<span foreground='" .. beautiful.green .. "'>".. net_ssid .."</span>"
+			wifi:get_children_by_id("icon")[1].markup = "<span foreground='" .. beautiful.red .. "'></span>"
 		end
+
 	end)
 
 	-- Info
-
+	
 	local info = wibox.widget {
 		{
 			{
 				wifi,
-				volume,
-				bright,
-				spacing = dpi(10),
+				bri_arc,
+				vol_arc,
+				time,
 				layout = wibox.layout.fixed.horizontal,
 			},
-			margins = { left = dpi(4), right = dpi(4) },
+			margins = dpi(6),
 			widget = wibox.container.margin,
 		},
 		shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,5) end,
@@ -225,27 +196,41 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
 	-- Tasklist
 	
-	local task = awful.widget.tasklist {
+	local tasklist = awful.widget.tasklist {
 		screen = s,
-		filter = awful.widget.tasklist.filter.focused,
-		style = {
-			shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,10) end,
-			font = beautiful.font_name .. " " .. "12",
-		},
+		filter = awful.widget.tasklist.filter.currenttags,
 		layout = {
-			spacing = dpi(2),
+			spacing = dpi(10),
 			layout = wibox.layout.fixed.horizontal,
 		},
 		widget_template = {
 			{
-				id = 'text_role',
-				forced_width = dpi(200),
-				widget = wibox.widget.textbox,
+				{
+					id = "icon_role",
+					widget = wibox.widget.imagebox,
+				},
+				widget = wibox.container.margin,
 			},
-			margins = dpi(4),
+			forced_width = dpi(40),
+			shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,5) end,
+			bg = beautiful.bar,
+			widget = wibox.container.background,
+		},
+	}
+
+	local task = wibox.widget {
+		{
+			{
+				tasklist,
+				layout = wibox.layout.align.horizontal,
+			},
+			margins = {left = dpi(6), right = dpi(6)},
 			widget = wibox.container.margin,
 		},
-
+		forced_height = dpi(40),
+		shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,5) end,
+		bg = beautiful.bar .. "00",
+		widget = wibox.container.background,
 	}
 
 	-- Taglist/Workspaces
@@ -271,7 +256,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 		screen = s,
 		filter = awful.widget.taglist.filter.all,
 		layout = {
-			spacing = dpi(10),
+			spacing = dpi(0),
 			layout = wibox.layout.fixed.horizontal,
 		},
 		style = {
@@ -281,26 +266,37 @@ screen.connect_signal("request::desktop_decoration", function(s)
 		widget_template = {
 			{
 				{
-					nil,
 					{
 						id = 'text_role',
 						forced_width = dpi(25),
 						align = 'center',
 						widget = wibox.widget.textbox,
 					},
-					{
-						wibox.widget.base.make_widget(),
-						forced_height = dpi(2),
-						id = 'background_role',
-						widget = wibox.container.background,
-					},
-					layout = wibox.layout.align.vertical,
+					layout = wibox.layout.align.horizontal,
 				},
 				margins = dpi(4),
 				widget = wibox.container.margin,
 			},
+			id = 'bg',
 			widget = wibox.container.background,
 
+			-- Just ignore these things below...
+
+			--create_callback = function(self, c3, _, _)
+			--	if c3.selected then
+			--		self:get_children_by_id("bg")[1].bg = beautiful.bar_alt
+			--	else
+			--		self:get_children_by_id("bg")[1].bg = beautiful.bar
+			--	end
+			--end,
+
+			--update_callback = function(self, c3, _)
+			--	if c3.selected then
+                        --                self:get_children_by_id("bg")[1].bg = beautiful.bar_alt
+                        --        else
+                        --                self:get_children_by_id("bg")[1].bg = beautiful.bar
+                        --        end
+                        --end,
 		},
 
 	}
@@ -311,42 +307,43 @@ screen.connect_signal("request::desktop_decoration", function(s)
 				tags,
 				layout = wibox.layout.fixed.horizontal,
 			},
-			margins = { left = dpi(5), right = dpi(5) },
 			widget = wibox.container.margin,
 		},
 		shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,5) end,
-		bg = beautiful.bar_alt,
+		bg = beautiful.bar,
 		widget = wibox.container.background,
 	}
 
 	----- Set up the BAR -----
 	
-
 	s.bar = awful.wibar {
 		position = 'top',
 		width = s.geometry.width, -- dpi(200),
-		height = dpi(50),
+		height = dpi(60),
 		screen = s,
-		bg = beautiful.bar,
+		bg = beautiful.bar .. "00",
 		visible = true,
 		--shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,10) end,
 	}
 
-	s.bar.y = dpi(0)
 
 	s.bar:setup {
 		{
 			{
 				tag,
-				spacing = dpi(15),
 				layout = wibox.layout.fixed.horizontal,
 			},
+			--{
+			--	{
+			--		task,
+			--		layout = wibox.layout.align.horizontal,
+			--	},
+			--	halign = 'left',
+			--	widget = wibox.container.place,
+			--}
 			nil,
 			{
 				info,
-				time,
-				layoutbox,
-				spacing = dpi(5),
 				layout = wibox.layout.fixed.horizontal,
 			},
 			layout = wibox.layout.align.horizontal,

@@ -1,6 +1,7 @@
 local awful = require "awful"
 
 modkey = "Mod4"
+alt = "Mod1"
 
 awful.keyboard.append_global_keybindings({
     awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
@@ -94,9 +95,9 @@ awful.keyboard.append_global_keybindings({
               {description = "increase the number of columns", group = "layout"}),
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
               {description = "decrease the number of columns", group = "layout"}),
-    awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
+    awful.key({ modkey,           }, "space", function () awful.layout.inc( 1) awesome.emit_signal("ui::layoutpop:open") end,
               {description = "select next", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
+    awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1) awesome.emit_signal("ui::layoutpop:open") end,
               {description = "select previous", group = "layout"}),
 })
 
@@ -115,6 +116,17 @@ awful.keyboard.append_global_keybindings({
 awful.keyboard.append_global_keybindings({
 	awful.key({ }, "XF86MonBrightnessUp", function() awful.spawn.with_shell("brightnessctl set 3%+") end),
 	awful.key({ }, "XF86MonBrightnessDown", function() awful.spawn.with_shell("brightnessctl set 3%-") end),
+})
+
+-- Toggle sidebar
+
+awful.keyboard.append_global_keybindings {
+	awful.key({alt}, "c", function() awesome.emit_signal("sidebar::toggle") end)
+}
+
+
+awful.keyboard.append_global_keybindings({
+	awful.key({ alt }, "x", function() awesome.emit_signal("ui::powermenu:open") end)
 })
 
 
