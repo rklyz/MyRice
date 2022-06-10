@@ -5,7 +5,7 @@
 </h1>
 
 <img align='left' alt="GitHub Repo stars" src="https://img.shields.io/github/stars/N3k0Ch4n/Another_dotfiles?color=%23ffefd0&label=Stars&style=for-the-badge&labelColor=ffefd0">
-<img align='right' alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/N3k0Ch4n/Another_dotfiles/main?color=%2388aeda&label=Update%3F&style=for-the-badge&labelColor=88aeda">
+<img align='right' alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/N3k0Ch4n/Another_dotfiles/main?color=%2388aeda&label=Last Update%3F&style=for-the-badge&labelColor=88aeda">
 
 <br>
 
