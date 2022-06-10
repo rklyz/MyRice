@@ -57,7 +57,7 @@ $ sudo pacman -S jq inotify-tools playerctl brightnessctl pulseaudio network-man
 **2. Clone the repo**
 
 ```sh
-$ git clone https://github.com/N3k0Ch4n/Another_dotfiles.git --recursive
+$ git clone https://github.com/N3k0Ch4n/Another_dotfiles.git
 ```
 
 **3. Copy the config inside your config folder, in this case "$HOME/.config/"**
