@@ -48,6 +48,9 @@ Note that I haven't test these scripts yet hehe
   - [Material Design Icons](https://materialdesignicons.com/)
 
 And some others I dont remember 💀
+  
+I Promise I'll list all of them when I get the time, okay?
+  
 </details>
 
 ```sh
