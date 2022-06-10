@@ -99,6 +99,12 @@ Pretty Simple, huh
 
 Just do not look at the keybind's awesome config. It's Messy..
 
+### Improvement in the future
+
+- Add sidebar hover
+- Notifications ui since I'm using the default one ( Sorry )
+- Code-Cleaning
+
 ### Million of Thanks to 💕
 
 - [Saimoom/Harry](https://github.com/saimoomedits/dotfiles)
