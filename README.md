@@ -47,7 +47,7 @@ Note that I haven't test these scripts yet hehe
   - ncmpcpp
   - [Material Design Icons](https://materialdesignicons.com/)
 
-And some others I dont remember
+And some others I dont remember 💀
 </details>
 
 ```sh
