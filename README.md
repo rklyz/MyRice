@@ -80,7 +80,7 @@ $ fc-cache -v
 
 **Here's how it actually looks like:**
 
-<img src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/github/scr.png">
+<img src="https://i.redd.it/0wlag5bp0q491.png">
 
 <br>
 
