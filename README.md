@@ -1,5 +1,15 @@
 <p align='center'><img width="200px" src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/conf/awesome/themes/pfp.jpg"></p>
-<h1 align='center'>Dot Rice..</h1>
+
+<h1 align='center'>
+  Dot Rice..
+</h1>
+
+<img align='left' alt="GitHub Repo stars" src="https://img.shields.io/github/stars/N3k0Ch4n/Another_dotfiles?color=%23ffefd0&label=Stars&style=for-the-badge&labelColor=ffefd0">
+<img align='right' alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/N3k0Ch4n/Another_dotfiles/main?color=%2388aeda&label=Update%3F&style=for-the-badge&labelColor=88aeda">
+
+<br>
+
+<br>
 
 <br>
 
@@ -47,7 +57,7 @@ $ sudo pacman -S jq inotify-tools playerctl brightnessctl pulseaudio network-man
 **2. Clone the repo**
 
 ```sh
-$ git clone https://github.com/N3k0Ch4n/Another_dotfiles.git --recursive
+$ git clone https://github.com/N3k0Ch4n/Another_dotfiles.git
 ```
 
 **3. Copy the config inside your config folder, in this case "$HOME/.config/"**
