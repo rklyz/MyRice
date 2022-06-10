@@ -70,6 +70,7 @@ $ cp -rf cava awesome mpd ncmpcpp picom $HOME/.config/
 $ cp -rf .Xresources .bashrc .vimrc .zshrc $HOME/
 $ cd ..; cp -rf misc/fonts/* $HOME/.local/share/fonts/
 $ fc-cache -v
+$ systemctl enable mpd.service; systemctl start mpd.service
 ```
 
 **4. Restart your system & Log in with awesomeWM**
