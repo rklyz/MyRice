@@ -1,7 +1,7 @@
 <p align='center'><img width="200px" src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/conf/awesome/themes/pfp.jpg"></p>
 
 <h1 align='center'>
-  Dot Rice..
+  .Rice..
 </h1>
 
 <img align='left' alt="GitHub Repo stars" src="https://img.shields.io/github/stars/N3k0Ch4n/Another_dotfiles?color=%23ffefd0&label=Stars&style=for-the-badge&labelColor=ffefd0">
