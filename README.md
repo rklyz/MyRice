@@ -58,12 +58,14 @@ $ sudo pacman -S jq inotify-tools playerctl brightnessctl pulseaudio network-man
 
 ```sh
 $ git clone https://github.com/N3k0Ch4n/Another_dotfiles.git
+$ cd Another_dotfiles/conf/
+$ git submodule init
+$ git submodule update
 ```
 
 **3. Copy the config inside your config folder, in this case "$HOME/.config/"**
 
 ```sh
-$ cd Another_dotfiles/conf/
 $ cp -rf cava awesome mpd ncmpcpp picom $HOME/.config/
 $ cp -rf .Xresources .bashrc .vimrc .zshrc $HOME/
 $ cd ..; cp -rf misc/fonts/* $HOME/.local/share/fonts/
