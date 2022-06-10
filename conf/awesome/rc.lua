@@ -27,9 +27,9 @@ naughty.connect_signal("request::display_error", function(message, startup)
     }
 end)
 
-require "signals.init"
-require "conf.init"
-require "ui.init"
+require "signals"
+require "conf"
+require "ui"
 
 -- Wallpaper
 screen.connect_signal("request::wallpaper", function(s)
