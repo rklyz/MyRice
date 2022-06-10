@@ -13,7 +13,7 @@
 
 <br>
 
-My personal & simple backup config (ig..)
+My personal & simple backup config rice
 > I'm using 1920x1080 screen resolution. Hope things goes perfectly fine for others..
 
 ### My setup 🧰:
@@ -48,6 +48,9 @@ Note that I haven't test these scripts yet hehe
   - [Material Design Icons](https://materialdesignicons.com/)
 
 And some others I dont remember 💀
+  
+I Promise I'll list all of them when I get the time, okay?
+  
 </details>
 
 ```sh
@@ -85,6 +88,20 @@ $ systemctl enable mpd.service; systemctl start mpd.service
 
 <br>
 
+<details close>
+  <summary>Some more preview</summary>
+  
+  <h3>Sidebar</h3>
+  <img src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/.github/sidebar.gif">
+  
+  <br>
+  
+  <h3>Volume/Brightness Popup</h3>
+  <img src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/.github/pop.gif">
+  
+  <br>
+</details>
+
 ### For the keybind, uhm..
 
 | Keybinds    | Uses     |
@@ -99,11 +116,18 @@ Pretty Simple, huh
 
 Just do not look at the keybind's awesome config. It's Messy..
 
+### Improvement in the future
+
+- Add sidebar hover
+- Notifications enhancement since I'm using the default one ( Sorry )
+- Code-Cleaning
+
 ### Million of Thanks to 💕
 
 - [Saimoom/Harry](https://github.com/saimoomedits/dotfiles)
 - [Elenapan](https://github.com/elenapan/dotfiles)
 - [Ner0z](https://github.com/ner0z/dotfiles)
+- [unix-parrot](https://github.com/unix-parrot)
 
 <br>
 
