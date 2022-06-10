@@ -13,7 +13,7 @@
 
 <br>
 
-My simple backup config for "Japan Vibe" rice theme
+My personal & simple backup config rice
 > I'm using 1920x1080 screen resolution. Hope things goes perfectly fine for others..
 
 ### My setup 🧰:
@@ -110,6 +110,7 @@ Just do not look at the keybind's awesome config. It's Messy..
 - [Saimoom/Harry](https://github.com/saimoomedits/dotfiles)
 - [Elenapan](https://github.com/elenapan/dotfiles)
 - [Ner0z](https://github.com/ner0z/dotfiles)
+- [unix-parrot](https://github.com/unix-parrot)
 
 <br>
 
