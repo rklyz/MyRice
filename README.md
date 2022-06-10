@@ -13,7 +13,7 @@
 
 <br>
 
-My simple backup config for "Japan Vibe" rice theme
+My personal & simple backup config (ig..)
 > I'm using 1920x1080 screen resolution. Hope things goes perfectly fine for others..
 
 ### My setup 🧰:
