@@ -85,6 +85,20 @@ $ systemctl enable mpd.service; systemctl start mpd.service
 
 <br>
 
+<details close>
+  <summary>Some more preview</summary>
+  
+  <h3>Sidebar</h3>
+  <img src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/.github/sidebar.gif">
+  
+  <br>
+  
+  <h3>Volume/Brightness Popup</h3>
+  <img src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/.github/pop.gif">
+  
+  <br>
+</details>
+
 ### For the keybind, uhm..
 
 | Keybinds    | Uses     |
