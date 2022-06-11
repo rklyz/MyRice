@@ -54,26 +54,26 @@ I Promise I'll list all of them when I get the time, okay?
 </details>
 
 ```sh
-$ sudo pacman -S jq inotify-tools playerctl brightnessctl pulseaudio network-manager rxvt-unicode mpd ncmpcpp 
+sudo pacman -S jq inotify-tools playerctl brightnessctl pulseaudio network-manager rxvt-unicode mpd ncmpcpp 
 ```
 
 **2. Clone the repo**
 
 ```sh
-$ git clone https://github.com/N3k0Ch4n/Another_dotfiles.git
-$ cd Another_dotfiles/conf/
-$ git submodule init
-$ git submodule update
+git clone https://github.com/N3k0Ch4n/Another_dotfiles.git
+cd Another_dotfiles/conf/
+git submodule init
+git submodule update
 ```
 
 **3. Copy the config inside your config folder, in this case "$HOME/.config/"**
 
 ```sh
-$ cp -rf cava awesome mpd ncmpcpp picom $HOME/.config/
-$ cp -rf .Xresources .bashrc .vimrc .zshrc $HOME/
-$ cd ..; cp -rf misc/fonts/* $HOME/.local/share/fonts/
-$ fc-cache -v
-$ systemctl enable mpd.service; systemctl start mpd.service
+cp -rf cava awesome mpd ncmpcpp picom $HOME/.config/
+cp -rf .Xresources .bashrc .vimrc .zshrc $HOME/
+cd ..; cp -rf misc/fonts/* $HOME/.local/share/fonts/
+fc-cache -v
+systemctl enable mpd.service; systemctl start mpd.service
 ```
 
 **4. Restart your system & Log in with awesomeWM**
