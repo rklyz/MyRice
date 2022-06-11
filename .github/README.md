@@ -135,4 +135,4 @@ Just do not look at the keybind's awesome config. It's Messy..
 
 **And lastly.. To You Guys!**
 
-**Hope y'all have fun ricing and I wish you 'Good Luck'!**
+**Hope y'all have fun ricing and I wish you luck!**
