@@ -119,9 +119,10 @@ Just do not look at the keybind's awesome config. It's Messy..
 
 ### Improvement in the future
 
-- Add sidebar hover
-- Notifications enhancement since I'm using the default one ( Sorry )
-- Code-Cleaning
+- [ ] Add sidebar hover
+- [ ] Dashboard ( working on it )
+- [ ] Notifications enhancement since I'm using the default one ( Sorry )
+- [ ] Code-Cleaning
 
 ### Million of Thanks to 💕
 
