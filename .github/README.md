@@ -111,6 +111,7 @@ Ah yes, you need to change openweathermap id and your-place id in 'conf/awesome/
 | Mod + r     | Rofi      |
 | alt + c     | Sidebar  |
 | alt + x     | Powermenu|
+| Mod + Ctrl + n | Un-minimize |
 
 Pretty Simple, huh
 
