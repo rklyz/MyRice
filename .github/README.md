@@ -28,8 +28,6 @@ Nothing special
 
 Well.. You just need to follow (or not) the following instructions given below
 
-Note that I haven't test these scripts yet hehe
-
 **1. Install all the dependencies**
 
 <details close><summary>Pottential dependencies</summary>
