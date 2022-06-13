@@ -24,7 +24,13 @@ My personal & simple backup config rice
 
 Nothing special
 
+<br>
+
+---
+
 ### How do I get this ❓
+
+<br>
 
 Well.. You just need to follow (or not) the following instructions given below
 
@@ -44,6 +50,8 @@ Well.. You just need to follow (or not) the following instructions given below
   - mpd
   - ncmpcpp
   - [Material Design Icons](https://materialdesignicons.com/)
+
+<br>
 
 And some others I dont remember 💀
   
