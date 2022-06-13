@@ -28,6 +28,8 @@ Nothing special
 
 ---
 
+<br>
+
 ### How do I get this ❓
 
 <br>
@@ -90,6 +92,10 @@ Ah yes, you need to change openweathermap id and your-place id in 'conf/awesome/
 
 <br>
 
+---
+
+<br>
+
 **Here's how it actually looks like:**
 
 <img src="https://i.redd.it/0wlag5bp0q491.png">
@@ -110,6 +116,12 @@ Ah yes, you need to change openweathermap id and your-place id in 'conf/awesome/
   <br>
 </details>
 
+<br>
+
+---
+
+<br>
+
 ### For the keybind, uhm..
 
 | Keybinds    | Uses     |
@@ -125,12 +137,24 @@ Pretty Simple, huh
 
 Just do not look at the keybind's awesome config. It's Messy..
 
+<br>
+
+---
+
+<br>
+
 ### Improvement in the future
 
 - [ ] Add sidebar hover
 - [ ] Dashboard ( working on it )
 - [ ] Notifications enhancement since I'm using the default one ( Sorry )
 - [ ] Code-Cleaning
+
+<br>
+
+---
+
+<br>
 
 ### Million of Thanks to 💕
 
