@@ -62,7 +62,7 @@ I Promise I'll list all of them when I get the time, okay?
 </details>
 
 ```sh
-sudo pacman -S jq inotify-tools playerctl brightnessctl pulseaudio network-manager rxvt-unicode mpd ncmpcpp 
+sudo pacman -S jq inotify-tools playerctl brightnessctl pulseaudio networkmanager rxvt-unicode mpd ncmpcpp 
 ```
 
 **2. Clone the repo**
