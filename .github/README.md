@@ -146,7 +146,7 @@ Just do not look at the keybind's awesome config. It's Messy..
 ### Improvement in the future
 
 - [ ] Dashboard ( working on it )
-- [ ] Notifications enhancement since I'm using the default one ( Sorry )
+- [x] Notifications enhancement since I'm using the default one ( Sorry )
 - [ ] Code-Cleaning
 
 <br>
