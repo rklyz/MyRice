@@ -43,11 +43,11 @@ theme.border_width        = dpi(0)
 
 ----- Colors -----
 
-theme.blue = "#6A9FB8"
-theme.yellow = "#C7B079"
-theme.green = "#5CB574"
-theme.red = "#BD6B64"
-theme.magenta = "#A6729F"
+theme.blue = "#84a0c6"
+theme.yellow = "#e2a478"
+theme.green = "#b4be82"
+theme.red = "#e27878"
+theme.magenta = "#a093c7"
 
 
 ----- Bar -----
@@ -55,7 +55,7 @@ theme.magenta = "#A6729F"
 theme.bar = "#0B151D"
 theme.bar_alt = "#212331"
 
-theme.taglist_fg_focus = "#ac8aac"
+theme.taglist_fg_focus = theme.magenta
 theme.taglist_fg_occupied = theme.fg_normal
 theme.taglist_fg_empty = "#404B66"
 theme.taglist_bg_focus = theme.blue
@@ -66,7 +66,7 @@ theme.tasklist_fg_focus = theme.fg_normal
 theme.titlebar_bg_normal = theme.bar
 theme.titlebar_bg_focus = theme.bar
 
-
+theme.notif = themes_path .. "notif.png"
 
 ----- Menu -----
 

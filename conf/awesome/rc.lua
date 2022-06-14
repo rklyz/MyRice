@@ -18,15 +18,6 @@ local gfs = require("gears.filesystem")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
--- Error Handling
-naughty.connect_signal("request::display_error", function(message, startup)
-    naughty.notification {
-        urgency = "critical",
-        title   = "Oops, an error happened"..(startup and " during startup!" or "!"),
-        message = message
-    }
-end)
-
 require "signals"
 require "conf"
 require "ui"
@@ -56,23 +47,5 @@ awful.mouse.append_global_mousebindings({
     awful.button({ }, 4, awful.tag.viewprev),
     awful.button({ }, 5, awful.tag.viewnext),
 })
-
--- Notifications
-
-ruled.notification.connect_signal('request::rules', function()
-    ruled.notification.append_rule {
-        rule       = { },
-        properties = {
-            screen           = awful.screen.preferred,
-            implicit_timeout = 5,
-        }
-    }
-end)
-
-naughty.connect_signal("request::display", function(n)
-    naughty.layout.box { notification = n }
-end)
-
-
 
 gears.timer.start_new(600, function() collectgarbage("step", 1024) return true end)

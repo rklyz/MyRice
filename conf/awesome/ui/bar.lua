@@ -198,7 +198,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 	
 	local tasklist = awful.widget.tasklist {
 		screen = s,
-		filter = awful.widget.tasklist.filter.currenttags,
+		filter = awful.widget.tasklist.filter.focused,
 		layout = {
 			spacing = dpi(10),
 			layout = wibox.layout.fixed.horizontal,
@@ -206,15 +206,22 @@ screen.connect_signal("request::desktop_decoration", function(s)
 		widget_template = {
 			{
 				{
-					id = "icon_role",
-					widget = wibox.widget.imagebox,
+					id = "clienticon",
+					widget = awful.widget.clienticon,
 				},
+				margins = dpi(8),
 				widget = wibox.container.margin,
 			},
 			forced_width = dpi(40),
 			shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,5) end,
 			bg = beautiful.bar,
 			widget = wibox.container.background,
+			create_callback = function(self,c,index,objects)
+				self:get_children_by_id("clienticon")[1].client = c
+			end,
+			update_callback = function(self,c,index,objects)
+				self:get_children_by_id("clienticon")[1].client = c
+			end,
 		},
 	}
 
@@ -333,14 +340,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
 				tag,
 				layout = wibox.layout.fixed.horizontal,
 			},
-			--{
-			--	{
-			--		task,
-			--		layout = wibox.layout.align.horizontal,
-			--	},
-			--	halign = 'left',
-			--	widget = wibox.container.place,
-			--}
 			nil,
 			{
 				info,

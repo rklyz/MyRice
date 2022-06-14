@@ -2,6 +2,7 @@ local awful = require "awful"
 local gears = require "gears"
 local wibox = require "wibox"
 local beautiful = require "beautiful"
+local naughty = require "naughty"
 local dpi = beautiful.xresources.apply_dpi
 
 local rubato = require "lib.rubato"
@@ -9,7 +10,7 @@ local rubato = require "lib.rubato"
 ----- Var -----
 
 width = dpi(350)
-height = dpi(800)
+height = awful.screen.focused().geometry.height - dpi(150)
 gaps = dpi(25)
 
 ----- Widgets -----
@@ -506,14 +507,73 @@ local weather = wibox.widget {
 	widget = wibox.container.background,
 }
 
+-- Search/Run thing
+
+local search_icon = wibox.widget {
+	markup = "<span foreground='" .. beautiful.blue .. "'>󰍉</span>",
+	align = "center",
+        valign = "center",
+        font = beautiful.font_name .. " 20",
+        widget = wibox.widget.textbox
+}
+
+local search_text = wibox.widget {
+	markup = "Type here..",
+	align = "left",
+	valign = "center",
+	font = beautiful.font,
+	widget = wibox.widget.textbox,
+}
+
+local search = wibox.widget {
+	{
+		{
+			search_icon,
+			search_text,
+			spacing = dpi(10),
+			layout = wibox.layout.fixed.horizontal,	
+		},
+		margins = dpi(10),
+		widget = wibox.container.margin,
+	},
+	forced_width = dpi(125),
+	forced_height = dpi(45),
+	shape = gears.shape.rounded_bar,
+	bg = beautiful.bar_alt,
+	widget = wibox.container.background,
+}
+
+local start_search = function()
+	awful.prompt.run {
+		textbox = search_text,
+		font = beautiful.font,
+		exe_callback = function(input)
+			awful.spawn(input)
+			if #input == 0 then naughty.notification { message = "Cancel search" }
+				else naughty.notification { message = "Opening " .. input .. ".." }
+			end
+		end,
+		completion_callback = awful.completion.shell,
+		done_callback = function()
+			search_text:set_markup_silently("Type here..")
+		end,
+		history_path = awful.util.get_cache_dir() .. "/history"
+	}
+end
+
+search:buttons(gears.table.join(
+	awful.button({ }, 1, function()
+		start_search()
+	end)
+))
 
 local sidebar = awful.popup {
 	ontop = true,
 	visible = false,
 	placement = function(c)
-		awful.placement.right(c)
+		awful.placement.bottom_right(c)
 	end,
-	shape = function(cr,w,h) gears.shape.partially_rounded_rect(cr,w,h,true,false,false,false,25) end,
+	shape = function(cr,w,h) gears.shape.partially_rounded_rect(cr,w,h,true,false,false,false,45) end,
 	widget = wibox.container.margin,
 }
 
@@ -530,6 +590,8 @@ sidebar:setup {
 					stats,
 					vertical_pad(gaps * 2),
 					music,
+					vertical_pad(gaps * 2),
+					search,
 					layout = wibox.layout.fixed.vertical,
 				},
 				expand = 'none',
