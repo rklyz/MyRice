@@ -1,4 +1,3 @@
-<p align='center'><img width="200px" src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/conf/awesome/themes/pfp.jpg"></p>
 
 <h1 align='center'>
   .Rice..
@@ -36,9 +35,9 @@ Nothing special
 
 Well.. You just need to follow (or not) the following instructions given below
 
-**1. Install all the dependencies**
+<details close>
 
-<details close><summary>Pottential dependencies</summary>
+<summary><b>1. Install the Dependencies</b></summary>
   
   - [awesome-git](https://aur.archlinux.org/packages/awesome-git)
   - [mpd-mpris](https://github.com/natsukagami/mpd-mpris)
@@ -51,22 +50,41 @@ Well.. You just need to follow (or not) the following instructions given below
   - rxvt-unicode
   - mpd
   - ncmpcpp
-  - [Material Design Icons](https://materialdesignicons.com/)
+  - redshift
+  - bluez
+  - bluez-utils
+
+<br>
+
+**Required Fonts**
+
+- [Material Design Icons](https://materialdesignicons.com/)
+- Icomoon
+- Iosevka
+- AzukifontBI
 
 <br>
 
 And some others I dont remember 💀
   
 I Promise I'll list all of them when I get the time, okay?
-  
-</details>
+
+<br>
+
+For Arch linux (since I use them)
 
 ```sh
 sudo pacman -S jq inotify-tools playerctl brightnessctl pulseaudio networkmanager rxvt-unicode mpd ncmpcpp \
-alsa-utils alsa-plugins alsa-firmware mpc xclip base-devel pamixer
+alsa-utils alsa-plugins alsa-firmware mpc xclip base-devel pamixer redshift
 ```
 
-**2. Clone the repo**
+</details>
+
+<br>
+
+<details close>
+
+<summary><b>2. Clone the repo</b></summary>
 
 ```sh
 git clone https://github.com/N3k0Ch4n/Another_dotfiles.git
@@ -75,7 +93,13 @@ git submodule init
 git submodule update
 ```
 
-**3. Copy the config inside your config folder, in this case "$HOME/.config/"**
+</details>
+
+<br>
+
+<details close>
+
+<summary><b>3. Copy the config file</b></summary>
 
 ```sh
 cp -rf cava awesome mpd ncmpcpp picom $HOME/.config/
@@ -85,9 +109,15 @@ fc-cache -v
 systemctl enable mpd.service; systemctl start mpd.service
 ```
 
+</details>
+
+<br>
+
 **4. Restart your system & Log in with awesomeWM**
 
 Ah yes, you need to change openweathermap id and your-place id in 'conf/awesome/signals/weather'
+
+<br>
 
 **5. You're done!**
 
@@ -99,23 +129,21 @@ Ah yes, you need to change openweathermap id and your-place id in 'conf/awesome/
 
 **Here's how it actually looks like:**
 
-<img src="https://i.redd.it/0wlag5bp0q491.png">
+<h3 align='center'>Desktop</h3>
+
+<img src="https://i.imgur.com/HI16CyG.png">
 
 <br>
 
-<details close>
-  <summary>Some more preview</summary>
-  
-  <h3>Sidebar</h3>
-  <img src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/.github/sidebar.gif">
-  
-  <br>
-  
-  <h3>Volume/Brightness Popup</h3>
-  <img src="https://github.com/N3k0Ch4n/Another_dotfiles/blob/main/.github/pop.gif">
-  
-  <br>
-</details>
+<h3 align='center'>Dashboard</h3>
+
+<img src="https://i.imgur.com/vBuacbX.png">
+
+<br>
+
+<h3 align='center'>Logout Screen</h3>
+
+<img src="https://i.imgur.com/CgBfzcD.png">
 
 <br>
 
@@ -130,6 +158,7 @@ Ah yes, you need to change openweathermap id and your-place id in 'conf/awesome/
 | Mod + Enter | Terminal |
 | Mod + Space | Layout   |
 | Mod + r     | Rofi      |
+| alt + z     | Dashboard|
 | alt + c     | Sidebar  |
 | alt + x     | Powermenu|
 | Mod + Ctrl + n | Un-minimize |
@@ -146,8 +175,9 @@ Just do not look at the keybind's awesome config. It's Messy..
 
 ### Improvement in the future
 
-- [ ] Dashboard ( working on it )
+- [x] Dashboard 
 - [x] Notifications enhancement
+- [ ] Lock Screen 
 - [ ] Code-Cleaning
 
 <br>
