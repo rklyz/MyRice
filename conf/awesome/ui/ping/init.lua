@@ -21,6 +21,7 @@ end)
 
 naughty.config.defaults.ontop = true
 naughty.config.defaults.position = "top_right"
+naughty.config.defaults.title = "System"
 naughty.config.defaults.timeout = 3
 
 naughty.config.presets.low.timeout      = 3
@@ -64,8 +65,8 @@ ruled.notification.connect_signal("request::rules", function()
 end)
 
 naughty.connect_signal("request::display", function(n)
-	local appicon = n.icon
-	if not appicon then appicon = beautiful.notif end
+	local icon = n.icon
+	if not icon then icon = beautiful.notif end
 	local time = os.date("%H:%M")
 
 	local action_widget = {
@@ -138,7 +139,7 @@ naughty.connect_signal("request::display", function(n)
 						{
 							{
 								{
-									image = appicon,
+									image = icon,
 									resize = true,
 									halign = "center",
 									valign = "center",

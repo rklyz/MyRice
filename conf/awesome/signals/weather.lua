@@ -8,14 +8,14 @@ local LANG = "en"
 
 sun_icon = ""
 moon_icon = ""
-dcloud_icon = ""
-ncloud_icon = ""
-cloud_icon = ""
-rain_icon = ""
-storm_icon = ""
-snow_icon = ""
+dcloud_icon = "󰖕"
+ncloud_icon = "󰼱"
+cloud_icon = "󰖐"
+rain_icon = "󰖗"
+storm_icon = "󰖖"
+snow_icon = "󰼶"
 mist_icon = ""
-bruh_icon = ""
+bruh_icon = "No icon"
 
 local weather_icons = {
     ["01d"] = { icon = sun_icon },

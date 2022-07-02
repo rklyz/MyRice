@@ -4,182 +4,174 @@ local wibox = require "wibox"
 local beautiful = require "beautiful"
 local dpi = beautiful.xresources.apply_dpi
 
------ Var -----
-
-local width = dpi(200)
-local height = dpi(600)
-
------ Widgets -----
-
--- Buttons function (I'm too lazy to write it many times)
-
-local createButtons = function(icon, text, command)
-
-	local widget = wibox.widget {
-		{
-			{
-				{
-					{
-						markup = icon,
-						align = 'center',
-						font = "icomoon 30",
-						widget = wibox.widget.textbox,
-					},
-					{
-						markup = text,
-						align = 'center',
-						font = beautiful.font_name .. " 14",
-						widget = wibox.widget.textbox,
-					},
-					spacing = dpi(10),
-					layout = wibox.layout.fixed.vertical,
-				},
-				halign = 'center',
-				valign = 'center',
-				widget = wibox.container.place,
-			},
-			margins = dpi(20),
-			widget = wibox.container.margin,
-		},
-		shape = function(cr,w,h) gears.shape.squircle(cr,w,h,5) end,
-		bg = beautiful.bar,
-		widget = wibox.container.background,
-	}
-
-	-- Hover
-
-	widget:connect_signal("mouse::enter", function()
-		if widget.bg ~= beautiful.bar_alt then
-			widget.backup = widget.bg
-			widget.has_backup = true
-		end
-		widget.bg = beautiful.bar_alt
-	end)
-
-	widget:connect_signal("mouse::leave", function()
-		if widget.has_backup then
-			widget.bg = widget.backup
-		end
-	end)
-
-	-- Keybindings
-
-	widget:buttons(gears.table.join(
-		awful.button( { }, 1, function()
-			awful.spawn(command)
-		end)))
-
-	return widget
+local coloring = function(text, color)
+	return "<span foreground='" .. color .. "'>" .. text .. "</span>"
 end
 
-local p = function(s)
 
-	s.powermenu = wibox {
-		ontop = true,
-		visible = false,
-		type = 'splash',
-		bg = "#05091199",
-		height = s.geometry.height,
-		width = s.geometry.width,
-		x = s.geometry.x,
-		y = s.geometry.y,
-		widget = wibox.container.margin,
-	}
+----- Logoooout -----
 
-	awful.placement.centered(s.powermenu)
-	
-	s.powermenu:buttons(gears.table.join(
-			awful.button(
-				{}, 2, function()
-					awesome.emit_signal('ui::powermenu:hide')
-				end),
-	
-			awful.button(
-				{}, 3, function()
-					awesome.emit_signal('ui::powermenu:hide')
-				end
-			),
-	
-			awful.button(
-				{}, 1, function()
-					awesome.emit_signal('ui::powermenu:hide')
-				end
-			)
-		)
-	)
-	
-	
-	s.powermenu:setup {
-		nil,
-		nil,
-		{
-			nil,
-			{
-					{
-					{
-						createButtons("", "PowerOff", "poweroff"),
-						createButtons("", "Reboot", "reboot"),
-						createButtons("", "Sleep", "systemctl suspend"),
-						createButtons("", "Lock", "i3lock"),
-						spacing = dpi(20),
-						layout = wibox.layout.flex.vertical,
-					},
-					margins = dpi(35),
-					widget = wibox.container.margin,
-				},
-				forced_width = width,
-				forced_height = height,
-				shape = function(cr,w,h) gears.shape.partially_rounded_rect(cr,w,h,true,false,false,true,15) end,
-				bg = beautiful.bar,
-				widget = wibox.container.background,
-			},
-			nil,
-			layout = wibox.layout.align.vertical,
-			expand = "none",
-		},
-		layout = wibox.layout.align.horizontal,
-		expand = "none",
-	}
-end
+local logout = wibox {
+	visible = false,
+	ontop = true,
+	bg = beautiful.bar .. "AA",
+	type = 'dock',
+}
 
--- Grabber/ kinda like lock or something
+awful.placement.maximize(logout)
 
-local p_grabber = awful.keygrabber {
-	auto_start = true,
+local keylock = awful.keygrabber {
+	autostart = false,
 	stop_event = 'release',
-	keypressed_callback = function (self, mod, key, command)
+	keypressed_callback = function(self, mod, key, command)
 		if key == "Escape" then
-			awesome.emit_signal("ui::powermenu:hide")
+			awesome.emit_signal("logout::toggle")
 		end
 	end
 }
 
-screen.connect_signal('request::desktop_decoration',
-	function(s)
-		p(s)
+local toggle = function()
+	if logout.visible then
+		keylock:stop()
+	else
+		keylock:start()
 	end
-)
+	logout.visible = not logout.visible
+end
 
-screen.connect_signal('removed',
-	function(s)
-		p(s)
-	end
-)
+logout:buttons(gears.table.join(
+	awful.button({ }, 1, function()
+		toggle()
+	end)
+))
 
--- Connect to signal
--- From "awesome/conf/keybind"
-
-awesome.connect_signal("ui::powermenu:open", function()
-	for s in screen do
-		s.powermenu.visible = false
-	end
-	awful.screen.focused().powermenu.visible = true
-	p_grabber:start()
+awesome.connect_signal("logout::toggle", function()
+	toggle()
 end)
 
-awesome.connect_signal("ui::powermenu:hide", function()
-	p_grabber:stop()
-	for s in screen do
-		s.powermenu.visible = false
+----- Var -----
+
+-- Greeting
+local greeting = wibox.widget.textbox()
+
+greeting.font = "azukifontBI Italic 42"
+greeting.align = 'center'
+greeting.markup = "Rest well, " .. string.gsub(os.getenv('USER'), "^%l", string.upper)
+
+-- Time
+local time = wibox.widget.textbox()
+local date = wibox.widget.textbox()
+
+time.font = beautiful.font_name .. " Bold 142"
+date.font = beautiful.font_name .. " 32"
+time.align = "center"
+date.align = "center"
+
+gears.timer {
+	timeout = 60,
+	call_now = true,
+	autostart = true,
+	callback = function()
+		time_var = os.date("%R")
+		date_var = os.date("%d %B, %Y")
+		time.markup = "<span>" .. time_var .. "</span>"
+		date.markup = "<span>" .. date_var .. "</span>"
 	end
-end)
+}
+
+local clock = wibox.widget {
+	time,
+	layout = wibox.layout.fixed.vertical,
+}
+
+local left = wibox.widget {
+	{
+		nil,
+		{
+			clock,
+			spacing = dpi(40),
+			layout = wibox.layout.fixed.vertical,
+		},
+		expand = 'none',
+		layout = wibox.layout.align.vertical,
+	},
+	margins = {left = dpi(50)},
+	widget = wibox.container.margin,
+}
+
+local middle = wibox.widget {
+	nil,
+	{
+		nil,
+		{
+			clock,
+			greeting,
+			spacing = dpi(5),
+			layout = wibox.layout.fixed.vertical,
+		},
+		expand = 'none',
+		layout = wibox.layout.align.horizontal,
+	},
+	expand = 'none',
+	layout = wibox.layout.align.vertical,
+}
+
+-- Powermenu
+local create_button = function(text, desc, color, command)
+	local text_var = wibox.widget.textbox()
+	local desc_var = wibox.widget.textbox()
+	
+	text_var.font = beautiful.font_name .. " 38"
+	desc_var.font = beautiful.font_name .. " 12"
+
+	text_var.align = "center"
+	desc_var.align = "center"
+
+	text_var.markup = coloring(text, color)
+	desc_var.markup = desc
+
+	local widget = wibox.widget {
+		text_var,
+		desc_var,
+		spacing = dpi(10),
+		layout = wibox.layout.fixed.vertical,
+	}
+
+	widget:buttons(gears.table.join(
+		awful.button({ }, 1, function()
+			awful.spawn.with_shell(command)
+		end)
+	))
+
+	return widget
+end
+
+local poweroff = create_button("󰐥", "PowerOff", beautiful.red, "poweroff")
+local reboot = create_button("󰜉", "Reboot", beautiful.yellow, "reboot")
+local sleeping = create_button("󰤄", "Sleep", beautiful.blue, "systemctl suspend")
+local logging_out = create_button("󰌾", "Logout", beautiful.green, "pkill awesome")
+
+local right = wibox.widget {
+	{
+		nil,
+		{
+			poweroff,
+			reboot,
+			sleeping,
+			logging_out,
+			spacing = dpi(40),
+			layout = wibox.layout.fixed.vertical,
+		},
+		expand = 'none',
+		layout = wibox.layout.align.vertical,
+	},
+	margins = {right = dpi(40)},
+	widget = wibox.container.margin,
+}
+
+logout:setup {
+	nil,
+	middle,
+	right,
+	layout = wibox.layout.align.horizontal,
+}

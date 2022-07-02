@@ -1,7 +1,7 @@
-*.font: xft:JetBrainsMonoMedium NF:size=12,xft:icomoon:size=12, xft:DejaVu Sans:size=12, xft:Noto Color Emoji:size=12
+*.font: xft:Iosevka:size=14:style=Medium,xft:icomoon:size=12, xft:DejaVu Sans:size=12, xft:Noto Color Emoji:size=12
+URxvt.intensitystyles: false
 URxvt.cursorBlink:                true
 URxvt.cursorUnderline:            true
-URxvt.saveLines:                  8192
 URxvt.scrollBar:                  false
 URxvt.scrollBar_right:            true
 URxvt.scrollBar_floating:         false
@@ -11,8 +11,14 @@ URxvt.urgentOnBell:               false
 URxvt.depth:                      32
 URxvt.iso14755:                   false
 URxvt.pointerBlank:               true
-*.internalBorder: 30
-URxvt.letterSpace: -1
+*.internalBorder: 40
+!URxvt.letterSpace: -1
+
+Xft.hinting: true
+Xft.hintstyle: hintfull
+Xft.autohint: true
+
+
 !
 !
 ! URxvt Extensions
@@ -35,7 +41,7 @@ URxvt.keysym.Control-End:         eval:scroll_to_bottom
 ! Mountain Xresources palette
 
 ! Special
-*.foreground: #f0f0f0
+*.foreground: #c5c8c6
 *.background: #0B151D
 
 ! Black

@@ -8,4 +8,6 @@ playerctld daemon &
 
 #sxhkd -c $HOME/.config/berry/sxhkdrc &
 
+xset -b &
+
 exec awesome

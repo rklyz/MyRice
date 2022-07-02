@@ -1,8 +1,10 @@
-sw_volume: 0
+sw_volume: 70
 audio_device_state:0:My ALSA Device
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: stop
+state: pause
+current: 0
+time: 70.602000
 random: 0
 repeat: 0
 single: 0
@@ -11,4 +13,6 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
+0:1_Dreamscape.mp3
+1:A Super Nice Japanese Song — Promise【Yakusoku 約束】Lyrics.mp3
 playlist_end

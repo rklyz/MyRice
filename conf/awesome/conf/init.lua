@@ -16,7 +16,7 @@ editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 local startup_script = [[
-picom --config $HOME/.config/picom/picom.conf
+picom --config $HOME/.config/picom/picom.conf --experimental-backends
 ]]
 
 awful.spawn.with_shell(

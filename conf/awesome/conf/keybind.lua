@@ -126,8 +126,12 @@ awful.keyboard.append_global_keybindings {
 
 
 awful.keyboard.append_global_keybindings({
-	awful.key({ alt }, "x", function() awesome.emit_signal("ui::powermenu:open") end)
+	awful.key({ alt }, "x", function() awesome.emit_signal("logout::toggle") end)
 })
+
+awful.keyboard.append_global_keybindings {
+	awful.key({ alt }, "z", function() awesome.emit_signal("dashboard::toggle") end)
+}
 
 
 awful.keyboard.append_global_keybindings({

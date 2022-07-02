@@ -15,15 +15,15 @@ local theme = {}
 
 ----- User -----
 
-theme.pfp = themes_path .. "pfp.jpg"
+theme.pfp = themes_path .. "pfp2.jpg"
 theme.user = "Neko"
 theme.hostname = "@Neptune"
 
 ----- Font -----
 
-theme.font = "CaskaydiaCove Nerd Font 14"
-theme.font_name = "CaskaydiaCove Nerd Font"
-theme.font_size = "14"
+theme.font = "iosevka bold 14"
+theme.font_name = "iosevka"
+theme.font_size = "bold 14"
 
 ----- General/default Settings -----
 
@@ -33,7 +33,7 @@ theme.bg_urgent     = "#151515"
 theme.bg_minimize   = "#151515"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#C6D2ED"
+theme.fg_normal     = "#C5C8C6"
 theme.fg_focus      = theme.fg_normal
 theme.fg_urgent     = theme.fg_normal
 theme.fg_minimize   = theme.fg_normal
@@ -47,26 +47,36 @@ theme.blue = "#84a0c6"
 theme.yellow = "#e2a478"
 theme.green = "#b4be82"
 theme.red = "#e27878"
-theme.magenta = "#a093c7"
+theme.magenta = "#B8AED5"
+theme.transparent = "#00000000"
+
+theme.gradient = {
+    [1] = "#0f2e55",
+    [2] = "#005982",
+    [3] = "#008798",
+}
+
+theme.empty = "#404B66"
 
 
 ----- Bar -----
 
 theme.bar = "#0B151D"
+theme.bar2 = "#0E1922"
 theme.bar_alt = "#212331"
 
-theme.taglist_fg_focus = theme.magenta
+theme.taglist_fg_focus = theme.yellow
 theme.taglist_fg_occupied = theme.fg_normal
 theme.taglist_fg_empty = "#404B66"
 theme.taglist_bg_focus = theme.blue
 
-theme.tasklist_fg_focus = theme.fg_normal
-
+theme.tasklist_plain_task_name = true
 
 theme.titlebar_bg_normal = theme.bar
-theme.titlebar_bg_focus = theme.bar
+theme.titlebar_bg_focus = theme.bar2
 
 theme.notif = themes_path .. "notif.png"
+theme.screenshot = themes_path .. "screenshot.png"
 
 ----- Menu -----
 
@@ -85,8 +95,8 @@ theme.menu_font = theme.font_name .. " 12"
 --theme.bg_widget = "#cc0000"
 
 -- Define the image to load
-theme.titlebar_close_button_normal = themes_path .. "titlebar/close_unfocus.png"
-theme.titlebar_close_button_focus  = themes_path.."titlebar/close.png"
+theme.titlebar_close_button_normal = gears.color.recolor_image(themes_path .. "titlebar/close.svg", theme.fg_normal)
+theme.titlebar_close_button_focus  = gears.color.recolor_image(themes_path .. "titlebar/close.svg", theme.fg_normal)
 
 theme.titlebar_minimize_button_normal = themes_path.."default/titlebar/minimize_normal.png"
 theme.titlebar_minimize_button_focus  = themes_path.."default/titlebar/minimize_focus.png"
@@ -111,7 +121,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper =  themes_path .. "wave2.jpg"
+theme.wallpaper =  themes_path .. "hogwarts(edited-night).jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."layouts/fairhw.png"
