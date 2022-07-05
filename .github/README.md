@@ -87,8 +87,8 @@ alsa-utils alsa-plugins alsa-firmware mpc xclip base-devel pamixer redshift
 <summary><b>2. Clone the repo</b></summary>
 
 ```sh
-git clone https://github.com/N3k0Ch4n/Another_dotfiles.git
-cd Another_dotfiles/conf/
+git clone https://github.com/N3k0Ch4n/dotRice.git
+cd dotRice/conf/
 git submodule init
 git submodule update
 ```
