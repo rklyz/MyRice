@@ -41,7 +41,7 @@ Well.. You just need to follow (or not) the following instructions given below
   
   - [awesome-git](https://aur.archlinux.org/packages/awesome-git)
   - [mpd-mpris](https://github.com/natsukagami/mpd-mpris)
-  - [picom (pijulius fork)](https://https://github.com/pijulius/picom)
+  - [picom (pijulius fork)](https://github.com/pijulius/picom)
   - jq
   - inotify-tools
   - playerctl
