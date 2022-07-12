@@ -421,7 +421,7 @@ local disk_bar = wibox.widget {
 
 local get_disk = function()
 	script = [[
-	df -kH -B 1MB /dev/sda3 | tail -1 | awk '{printf "%d|%d" ,$2, $3}'
+	df -kH -B 1MB /dev/sda2 | tail -1 | awk '{printf "%d|%d" ,$2, $3}'
 	]]
 	awful.spawn.easy_async_with_shell(script, function(stdout)
 		local disk_total = stdout:match('(%d+)[|]')

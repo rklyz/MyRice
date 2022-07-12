@@ -15,7 +15,7 @@ local theme = {}
 
 ----- User -----
 
-theme.pfp = themes_path .. "pfp2.jpg"
+theme.pfp = themes_path .. "pfp.jpg"
 theme.user = "Neko"
 theme.hostname = "@Neptune"
 
@@ -121,7 +121,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper =  themes_path .. "hogwarts(edited-night).jpg"
+theme.wallpaper =  themes_path .. "wallpaper.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."layouts/fairhw.png"
