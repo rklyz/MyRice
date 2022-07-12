@@ -132,19 +132,19 @@ Ah yes, you need to change openweathermap id and your-place id in 'conf/awesome/
 
 <h3 align='center'>Desktop</h3>
 
-<img src="https://i.imgur.com/HI16CyG.png">
+<img src="https://i.imgur.com/mgE86K9.png">
 
 <br>
 
 <h3 align='center'>Dashboard</h3>
 
-<img src="https://i.imgur.com/vBuacbX.png">
+<img src="https://i.imgur.com/wLQSWaD.png">
 
 <br>
 
 <h3 align='center'>Logout Screen</h3>
 
-<img src="https://i.imgur.com/CgBfzcD.png">
+<img src="https://i.imgur.com/EMpOcgi.png">
 
 <br>
 
