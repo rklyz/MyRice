@@ -12,7 +12,7 @@
 
 <br>
 
-My personal & simple backup config rice
+My Simple rice
 > I'm using 1920x1080 screen resolution. Hope things goes perfectly fine for others..
 
 ### My setup 🧰:
