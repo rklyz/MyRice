@@ -1,5 +1,9 @@
 
 <h1 align='center'>
+  <img align='center' src='https://github.com/N3k0Ch4n/dotRice/blob/main/.github/hollow-knight-hornet.gif'>
+  
+  <br>
+  
   .Rice..
 </h1>
 
