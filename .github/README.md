@@ -156,7 +156,7 @@ Ah yes, you need to change openweathermap id and your-place id in 'conf/awesome/
 
 <br>
 
-### For the keybind, uhm..
+### For the keybind..
 
 | Keybinds    | Uses     |
 | ----------- | -------- |
