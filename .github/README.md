@@ -21,6 +21,7 @@ My Simple rice
 
 ### My setup 🧰:
 
+- **OS** - Endeavor OS
 - **WM**   - AwesomeWM
 - **Term**  -  URxvt
 - **Comp**  -  Picom
