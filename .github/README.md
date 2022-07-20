@@ -133,7 +133,7 @@ Ah yes, you need to change openweathermap id and your-place id in 'conf/awesome/
 
 <br>
 
-**Here's how it actually looks like:**
+### How it looks like..
 
 <h3 align='center'>Desktop</h3>
 
