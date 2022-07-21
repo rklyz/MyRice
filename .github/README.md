@@ -16,8 +16,11 @@
 
 <br>
 
-My Simple rice
-> I'm using 1920x1080 screen resolution. Hope things goes perfectly fine for others..
+An awesome(wm) **rice** that I made to get comfy experience for my daily usage.<br>
+
+So.. go ahead on what you're trying to do.
+
+I wouldn't mind.
 
 ### My setup 🧰:
 
@@ -27,6 +30,8 @@ My Simple rice
 - **Comp**  -  Picom
 
 Nothing special
+
+> I'm using 1920x1080 screen resolution. Hope things goes perfectly fine for others..
 
 <br>
 
