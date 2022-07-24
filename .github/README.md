@@ -201,6 +201,8 @@ Just do not look at the keybind's awesome config. It's Messy..
 
 - [Saimoom/Harry](https://github.com/saimoomedits/dotfiles)
 - [Elenapan](https://github.com/elenapan/dotfiles)
+- [Drahenprofi](https://github.com/drahenprofi/dotfiles)
+- [Rxyhn](https://github.com/rxyhn/dotfiles)
 - [Ner0z](https://github.com/ner0z/dotfiles)
 - [unix-parrot](https://github.com/unix-parrot)
 
