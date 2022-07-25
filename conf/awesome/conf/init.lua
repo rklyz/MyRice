@@ -9,14 +9,14 @@ require "conf.keybind"
 require "conf.rules"
 require "conf.client"
 
-terminal = "urxvt"
+terminal = "wezterm"
 browser = "firefox"
 fileManager = "thunar"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 local startup_script = [[
-picom --config $HOME/.config/picom/picom.conf --experimental-backends
+picom --config $HOME/.config/picom/picom.conf
 ]]
 
 awful.spawn.with_shell(

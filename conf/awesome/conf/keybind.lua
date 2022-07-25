@@ -1,5 +1,8 @@
 local awful = require "awful"
 
+-- SOme Requiring 
+local screenshot = require "lib.screenshot"
+
 modkey = "Mod4"
 alt = "Mod1"
 
@@ -118,6 +121,13 @@ awful.keyboard.append_global_keybindings({
 	awful.key({ }, "XF86MonBrightnessDown", function() awful.spawn.with_shell("brightnessctl set 3%-") end),
 })
 
+-- Screeenshot
+
+awful.keyboard.append_global_keybindings {
+	awful.key({alt}, "s", function() screenshot.shot_later() end)
+}
+
+
 -- Toggle sidebar
 
 awful.keyboard.append_global_keybindings {
@@ -125,9 +135,9 @@ awful.keyboard.append_global_keybindings {
 }
 
 
-awful.keyboard.append_global_keybindings({
+awful.keyboard.append_global_keybindings {
 	awful.key({ alt }, "x", function() awesome.emit_signal("logout::toggle") end)
-})
+}
 
 awful.keyboard.append_global_keybindings {
 	awful.key({ alt }, "z", function() awesome.emit_signal("dashboard::toggle") end)

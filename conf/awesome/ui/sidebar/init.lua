@@ -7,88 +7,30 @@ local dpi = beautiful.xresources.apply_dpi
 
 local rubato = require "lib.rubato"
 
+local supporter = require "supporter"
+
+----- requirement -----
+
 ----- Var -----
 scr = awful.screen.focused()
 
-border = dpi(2)
-width = dpi(320) - border -- To get desired width without border
-height = dpi(400) - border -- Same as width ^^^
-gaps = dpi(20)
-
------ Function -----
-local rr = function(cr,w,h)
-	gears.shape.rounded_rect(cr,w,h,5)
-end
-
-local partial_rr = function(cr,w,h)
-	gears.shape.partially_rounded_rect(cr,w,h,false,true,false,false,32)
-end
-
-local pad_h = function(pad)
-	return wibox.widget {
-		forced_width = pad,
-		widget = wibox.container.background,
-	}
-end
-
-local pad_v = function(pad)
-	return wibox.widget {
-		forced_height = pad,
-		widget = wibox.container.background,
-	}
-end
-
-local coloring_text = function(text, color)
-	color = color or beautiful.fg_normal
-	return "<span foreground='" .. color .. "'>" .. text .. "</span>"
-end
-
-local crt_box = function(widget, bg_color, border_width)
-	local container = wibox.container.background()
-	--container.forced_width = width
-	--container.forced_height = height
-	container.border_width = border_width or 0
-	container.border_color = beautiful.bar_alt
-	container.bg = bg_color or beautiful.transparent
-	container.shape = rr
-
-	local box_widget = wibox.widget {
-		{
-			{
-				nil,
-				{
-					nil,
-					widget,
-					expand = 'none',
-					layout = wibox.layout.align.vertical,
-				},
-				expand = 'none',
-				layout = wibox.layout.align.horizontal,
-			},
-			widget = container,
-		},
-		margins = dpi(10),
-		widget = wibox.container.margin,
-	}
-
-	return box_widget
-end
+border = dpi(0)
+width = dpi(420) - border -- To get desired width without border
+height = scr.geometry.height - border -- Same as width ^^^
+gaps = dpi(0)
 
 ----- Widgets -----
 
-sidebar = wibox {
+local sidebar = wibox {
 	visible = true,
 	ontop = true,
 	width = width,
 	height = height,
-	border_width = border,
-	border_color = beautiful.bar_alt,
 	bg = beautiful.bar,
-	shape = rr,
 	type = 'dock'
 }
 
-awful.placement.top_left(sidebar, { margins = {top = dpi(90)}})
+awful.placement.top_left(sidebar)
 
 --sidebar:struts {left = dpi(40 + sidebar.width)}
 
@@ -126,219 +68,225 @@ awesome.connect_signal("sidebar::toggle", function()
 end)
 
 ----- Var -----
-
--- Clock
-local hour = wibox.widget.textbox()
-local minute = wibox.widget.textbox()
-local ampm = wibox.widget.textbox()
-hour.font = beautiful.font_name .. " bold 42"
-hour.align = 'center'
-minute.font = beautiful.font_name .. " bold 42"
-minute.align = 'center'
-ampm.font = beautiful.font_name .. " bold 12"
-ampm.align = 'left'
-ampm.valign = 'top'
+--- Time
+local day = wibox.widget.textbox()
+day.font = beautiful.font_name .. " bold 32"
+day.align = 'center'
 
 local date = wibox.widget.textbox()
-date.font = beautiful.font_name .. " Medium 14"
+date.font = beautiful.font_name .. " bold 14"
 date.align = 'center'
 
-local time = wibox.widget {
-	hour,
-	pad_h(20),
-	minute,
-	ampm,
+local update_time = function()
+	day.markup = supporter.text_coloring(os.date("%A"), beautiful.red)
+	date.markup = os.date("%d %B %Y")
+end
+
+local time_widget = wibox.widget {
+	day,
+	date,
+	spacing = dpi(4),
+	layout = wibox.layout.fixed.vertical,
+}
+
+gears.timer {
+	timeout = 60,
+	call_now = true,
+	autostart = true,
+	callback = function()
+		update_time()
+	end
+}
+
+local time = supporter.create_box(time_widget, dpi(0), dpi(40))
+
+--- User Profile
+local pfp = wibox.widget.imagebox()
+pfp.image = beautiful.pfp
+pfp.clip_shape = gears.shape.circle
+pfp.forced_width = dpi(300)
+pfp.forced_height = dpi(300)
+
+local user = wibox.widget.textbox()
+user.font = beautiful.font_name .. " bold 32"
+user.align = 'center'
+user.markup = supporter.text_coloring(string.gsub(os.getenv("USER"), "^%l", string.upper), beautiful.red) -- Capitalize first letter in 1 line hehe
+
+local hostname = wibox.widget.textbox()
+hostname.font = beautiful.font_name .. " bold 14"
+hostname.align = 'center'
+
+awful.spawn.easy_async_with_shell("echo $HOST", function(stdout)
+	hostname.markup = "@" .. tostring(stdout)
+end)
+
+local profile_widget = wibox.widget {
+	{
+		nil,
+		pfp,
+		expand = 'none',
+		layout = wibox.layout.align.horizontal,
+	},
+	supporter.spacing_v(dpi(6)),
+	user,
+	hostname,
+	layout = wibox.layout.fixed.vertical,
+}
+
+local profile = supporter.create_box(profile_widget, dpi(10), dpi(10))
+
+--- Weather
+local hows_weather = wibox.widget.textbox()
+hows_weather.font = beautiful.font_name .. " Medium 20"
+hows_weather.align = 'center'
+hows_weather.markup = "Fetching.." -- Use this first while fetching data
+
+local weather_icon = wibox.widget.textbox()
+weather_icon.font = beautiful.font_name .. " bold 24"
+weather_icon.align = 'center'
+weather_icon.markup = supporter.text_coloring("󰖐", beautiful.blue)
+
+awesome.connect_signal("signal::weather", function(status, _)
+	status = string.gsub(status, "'", "")
+	status = string.gsub(status, "\n", "")
+	hows_weather.markup = status
+end)
+
+local weather_widget = wibox.widget {
+	supporter.spacing_h(dpi(20)),
+	weather_icon,
+	hows_weather,
+	spacing = dpi(10),
 	layout = wibox.layout.fixed.horizontal,
 }
 
+local weather = supporter.create_box(weather_widget, dpi(30), dpi(20))
+
+-- Temperature
+local celsius = wibox.widget.textbox()
+celsius.font = beautiful.font_name .. " Medium 20"
+celsius.align = 'center'
+
+local temp_icon = wibox.widget.textbox()
+temp_icon.font = beautiful.font_name .. " Medium 24"
+temp_icon.align = 'center'
+temp_icon.markup = supporter.text_coloring("󰔏", beautiful.red)
+
+awesome.connect_signal("signal::weather", function(_, feels_like)
+	feels_like = string.gsub(feels_like, "'", "")
+	feels_like = string.gsub(feels_like, "\n", "")
+	celsius.markup = feels_like
+end)
+
+local temp_widget = wibox.widget {
+	supporter.spacing_h(dpi(20)),
+	temp_icon,
+	celsius,
+	spacing = dpi(10),
+	layout = wibox.layout.fixed.horizontal,
+}
+
+local temperature = supporter.create_box(temp_widget, dpi(20), dpi(20))
+
+--- Wifi
+local wifi_name = wibox.widget.textbox()
+wifi_name.font = beautiful.font_name .. " Medium 20"
+wifi_name.align = 'center'
+
+local wifi_icon = wibox.widget.textbox()
+wifi_icon.font = beautiful.font_name .. " bold 24"
+wifi_icon.align = 'center'
+
+local wifi_widget = wibox.widget {
+	supporter.spacing_h(dpi(20)),
+	wifi_icon,
+	wifi_name,
+	spacing = dpi(10),
+	layout = wibox.layout.fixed.horizontal,
+}
+
+awesome.connect_signal("signal::wifi", function(net_stat, net_ssid)
+	if net_stat then
+		net_ssid = net_ssid:match("(.-):")
+		wifi_name.markup = net_ssid
+		wifi_icon.markup = supporter.text_coloring("󰤨", beautiful.green)
+	else
+		wifi_name.markup = "No Connection ;-;"
+		wifi_icon.markup = supporter.text_coloring("󰤯", beautiful.red)
+	end
+end)
+
+local wifi = supporter.create_box(wifi_widget, dpi(20), dpi(20))
+
+--- Uptime
+local uptime_icon = wibox.widget.textbox()
+uptime_icon.font = beautiful.font_name .. " bold 24"
+uptime_icon.align = 'center'
+uptime_icon.markup = supporter.text_coloring("󰍹", beautiful.yellow)
+
+local the_uptime = wibox.widget.textbox()
+the_uptime.font = beautiful.font_name .. " Medium 20"
+the_uptime.align = 'center'
+
+local update_uptime = function()
+	local script = [[
+	uptime -p]]
+
+	awful.spawn.easy_async_with_shell(script, function(stdout)
+		stdout = string.gsub(stdout, "\n", "")
+		stdout = string.gsub(stdout, "^%l", string.upper)
+		the_uptime.markup = tostring(stdout)
+	end)
+end
+
 gears.timer {
 	timeout = 60,
 	call_now = true,
 	autostart = true,
 	callback = function()
-		hour.markup = coloring_text(os.date('%I'), beautiful.magenta)
-		minute.markup = coloring_text(os.date('%M'), beautiful.magenta)
-		date.markup = coloring_text(os.date('%A %b %d'), beautiful.fg_normal)
-		local night = {}
-		if os.date('%p') == "PM"  then
-			night.color = beautiful.fg_normal
-		else
-			night.color = beautiful.yellow
-		end
-		ampm.markup = coloring_text(os.date('%p'), night.color)
+		update_uptime()
 	end
 }
 
-local clock_widget = wibox.widget {
-	{
-		time,
-		date,
-		layout = wibox.layout.fixed.vertical,
-	},
-	margins = { left = dpi(12), right = dpi(12), top = dpi(10), bottom = dpi(10) },
-	widget = wibox.container.margin,
+local uptime_widget = wibox.widget {
+	supporter.spacing_h(dpi(20)),
+	uptime_icon,
+	the_uptime,
+	spacing = dpi(10),
+	layout = wibox.layout.fixed.horizontal,
 }
 
-local clock = crt_box(clock_widget, beautiful.transparent)
+local uptime = supporter.create_box(uptime_widget, dpi(20), dpi(20))
 
--- Separatorr
-local separator_widget = wibox.widget {
-	forced_height = dpi(5),
-	bg = beautiful.bar_alt,
-	widget = wibox.container.background,
-}
-
-local separator = wibox.widget {
-	separator_widget,
-	margins = {bottom = dpi(20)},
-	widget = wibox.container.margin,
-}
-
--- Todo:
---    | Volume/Brightness
---    | Notifications center
-
--- Uptime
-local uptime_widget = wibox.widget.textbox()
-uptime_widget.font = beautiful.font_name .. " Medium 14"
-uptime_widget.align = 'center'
-
-local get_uptime = function()
-	awful.spawn.easy_async_with_shell('uptime -p', function(stdout)
-		uptime_widget.markup = coloring_text(stdout)
-	end)
-end
-
-gears.timer {
-	timeout = 60,
-	autostart = true,
-	call_now = true,
-	callback = function()
-		get_uptime()
-	end
-}
-
--- Volume/Brightness
-local icon = {
-	["volume"] = {icon = "󰋋", color = beautiful.blue},
-	["bright"] = {icon = "󰃟", color = beautiful.yellow},
-}
-
-local crt_icon = function(text, color)
-	local icon_widget = wibox.widget.textbox()
-	icon_widget.font = beautiful.font_name .. " 22"
-	icon_widget.align = 'center'
-	icon_widget.markup = coloring_text(text, color)
-
-	return icon_widget
-end
-
-local volume_icon = crt_icon(icon["volume"].icon, icon["volume"].color)
-local bright_icon = crt_icon(icon["bright"].icon, icon["bright"].color)
-
-local crt_slider = function(color)
-	local slider_widget = wibox.widget.slider()
-	slider_widget.forced_width = dpi(160)
-	slider_widget.forced_height = dpi(38)
-	slider_widget.bar_shape = gears.shape.rounded_rect
-	slider_widget.bar_height = dpi(5)
-	slider_widget.bar_color = beautiful.bar2
-	slider_widget.bar_active_color = color
-	slider_widget.handle_color = color
-	slider_widget.handle_shape = gears.shape.circle
-
-	return slider_widget
-end
-
-local volume_slider = crt_slider(beautiful.blue)
-local bright_slider = crt_slider(beautiful.yellow)
-
-local search_vol = true
-
-local get_volume = function()
-	awful.spawn.easy_async_with_shell("pamixer --get-volume", function(stdout)
-      		local value = string.gsub(stdout, "^%s*(.-)%s*$", "%1")
-       		volume_slider.value = tonumber(value)
-	end)
-end
-
-local get_brightness = function()
-	awful.spawn.easy_async_with_shell("brightnessctl g", function(stdout)
-        	local bri = tonumber(stdout)
-		awful.spawn.easy_async_with_shell("brightnessctl m", function(stdout)
-                	local max = tonumber(stdout)
-                	local value = bri/max * 100
-                	bright_slider.value = value
-        	end)
-	end)
-end
-
-gears.timer {
-	timeout = 2,
-	autostart = true,
-	call_now = true,
-	callback = function()
-		get_volume()
-		get_brightness()
-	end
-}
-
-volume_slider:connect_signal("property::value", function(_, new_value)
-        volume_slider.value = new_value
-        awful.spawn("pamixer --set-volume " .. new_value, false)
-end)
-
-bright_slider:connect_signal('property::value', function(_, value)
-	bright_slider.value = value
-	awful.spawn.with_shell('brightnessctl set ' .. value .. '%')
-end)
-
-local volume_widget = wibox.layout.fixed.horizontal()
-volume_widget.spacing = dpi(12)
-volume_widget:add(volume_icon, volume_slider)
-
-local bright_widget = wibox.layout.fixed.horizontal()
-bright_widget.spacing = dpi(12)
-bright_widget:add(bright_icon, bright_slider)
-
--- Buttons
-local manybutton = wibox.widget {
+--- Info
+local info = wibox.widget {
 	nil,
 	{
-		nil,
-		{
-			require "ui.sidebar.wifi", -- Return wifi
-			require "ui.sidebar.bluetooth",
-			require "ui.sidebar.sunlight",
-			spacing = dpi(14),
-			layout = wibox.layout.fixed.horizontal,
-		},
-		expand = 'none',
-		layout = wibox.layout.align.horizontal,
+		weather,
+		temperature,
+		wifi,
+		uptime,
+		layout = wibox.layout.fixed.vertical,
 	},
 	expand = 'none',
-	layout = wibox.layout.align.vertical,
+	layout = wibox.layout.align.horizontal,
 }
 
-local buttons = crt_box(manybutton, beautiful.bar)
-
+local side_widget = wibox.widget {
+	{
+		time,
+		profile,
+		info,
+		layout = wibox.layout.fixed.vertical,
+	},
+	margins = dpi(10),
+	widget = wibox.container.margin,
+}
 
 sidebar : setup {
-	{
-		nil,
-		{
-			clock,
-			separator,
-			uptime_widget,
-			volume_widget,
-			bright_widget,
-			buttons,
-			layout = wibox.layout.fixed.vertical,
-		},
-		expand = 'none',
-		layout = wibox.layout.align.horizontal,
-	},
-	bg = beautiful.bar,
-	widget = wibox.container.background,
+	nil,
+	side_widget,
+	expand = 'none',
+	layout = wibox.layout.align.vertical,
 }
 

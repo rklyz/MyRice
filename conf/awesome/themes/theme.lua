@@ -10,10 +10,12 @@ local gears = require "gears"
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_configuration_dir() .. "themes/"
 local walls_path = "~/.local/pictures/Walls/"
+local home = os.getenv('HOME')
 
 local theme = {}
 
------ User -----
+----- User Preferences -----
+theme.wallpaper =  home .. "/Downloads/girlfarm.jpg"
 
 theme.pfp = themes_path .. "pfp.jpg"
 theme.user = "Neko"
@@ -21,9 +23,9 @@ theme.hostname = "@Neptune"
 
 ----- Font -----
 
-theme.font = "iosevka bold 14"
-theme.font_name = "iosevka"
-theme.font_size = "bold 14"
+theme.font = "Roboto Medium 14"
+theme.font_name = "Roboto"
+theme.font_size = " Medium 14"
 
 ----- General/default Settings -----
 
@@ -38,16 +40,19 @@ theme.fg_focus      = theme.fg_normal
 theme.fg_urgent     = theme.fg_normal
 theme.fg_minimize   = theme.fg_normal
 
-theme.useless_gap         = dpi(20)
+theme.useless_gap         = dpi(10)
 theme.border_width        = dpi(0)
 
 ----- Colors -----
 
-theme.blue = "#84a0c6"
+theme.black = "#242931"
+theme.white = "#b6beca"
+theme.blue = "#70a5eb"
 theme.yellow = "#e2a478"
 theme.green = "#b4be82"
-theme.red = "#e27878"
-theme.magenta = "#B8AED5"
+theme.red = "#e05f65"
+theme.magenta = "#c68aee"
+theme.pink = "#E8B2C0"
 theme.transparent = "#00000000"
 
 theme.gradient = {
@@ -61,9 +66,8 @@ theme.empty = "#404B66"
 
 ----- Bar -----
 
-theme.bar = "#0B151D"
-theme.bar2 = "#0E1922"
-theme.bar_alt = "#212331"
+theme.bar = "#101419"
+theme.bar_alt = "#15191e"
 
 theme.taglist_fg_focus = theme.yellow
 theme.taglist_fg_occupied = theme.fg_normal
@@ -73,7 +77,7 @@ theme.taglist_bg_focus = theme.blue
 theme.tasklist_plain_task_name = true
 
 theme.titlebar_bg_normal = theme.bar
-theme.titlebar_bg_focus = theme.bar2
+theme.titlebar_bg_focus = theme.bar_alt
 
 theme.notif = themes_path .. "notif.png"
 theme.screenshot = themes_path .. "screenshot.png"
@@ -95,11 +99,11 @@ theme.menu_font = theme.font_name .. " 12"
 --theme.bg_widget = "#cc0000"
 
 -- Define the image to load
-theme.titlebar_close_button_normal = gears.color.recolor_image(themes_path .. "titlebar/close.svg", theme.fg_normal)
-theme.titlebar_close_button_focus  = gears.color.recolor_image(themes_path .. "titlebar/close.svg", theme.fg_normal)
+theme.titlebar_close_button_normal = gears.color.recolor_image(themes_path .. "titlebar/close_1.png", theme.black)
+theme.titlebar_close_button_focus  = gears.color.recolor_image(themes_path .. "titlebar/close_2.png", theme.red)
 
-theme.titlebar_minimize_button_normal = themes_path.."default/titlebar/minimize_normal.png"
-theme.titlebar_minimize_button_focus  = themes_path.."default/titlebar/minimize_focus.png"
+theme.titlebar_minimize_button_normal = gears.color.recolor_image(themes_path .. "titlebar/minimize_1.png", theme.black)
+theme.titlebar_minimize_button_focus  = gears.color.recolor_image(themes_path .. "titlebar/minimize_2.png", theme.green)
 
 theme.titlebar_ontop_button_normal_inactive = themes_path.."default/titlebar/ontop_normal_inactive.png"
 theme.titlebar_ontop_button_focus_inactive  = themes_path.."default/titlebar/ontop_focus_inactive.png"
@@ -116,12 +120,10 @@ theme.titlebar_floating_button_focus_inactive  = themes_path.."default/titlebar/
 theme.titlebar_floating_button_normal_active = themes_path.."default/titlebar/floating_normal_active.png"
 theme.titlebar_floating_button_focus_active  = themes_path.."default/titlebar/floating_focus_active.png"
 
-theme.titlebar_maximized_button_normal_inactive = themes_path.."default/titlebar/maximized_normal_inactive.png"
-theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
-
-theme.wallpaper =  themes_path .. "wallpaper.png"
+theme.titlebar_maximized_button_normal_inactive = gears.color.recolor_image(themes_path .. "titlebar/close_1.png", theme.black)
+theme.titlebar_maximized_button_focus_inactive  = gears.color.recolor_image(themes_path .. "titlebar/close_1.png", theme.yellow)
+theme.titlebar_maximized_button_normal_active = gears.color.recolor_image(themes_path .. "titlebar/close_1.png", theme.black)
+theme.titlebar_maximized_button_focus_active  = gears.color.recolor_image(themes_path .. "titlebar/close_1.png", theme.yellow)
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."layouts/fairhw.png"

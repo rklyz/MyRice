@@ -15,7 +15,7 @@ local box_gap = dpi(10)
 local dashboard = wibox {
 	visible = false,
 	ontop = true,
-	bg = beautiful.bar .. "AA",
+	bg = beautiful.bar .. "4D",
 	type = 'dock'
 }
 
@@ -227,7 +227,7 @@ styles.focus = {
 }
 styles.header = {
 	fg_color = beautiful.red,
-	markup = function(t) return '<span font_desc="' .. beautiful.font_name .. ' bold 20">' ..  t .. '</span>' end
+	markup = function(t) return '<span font_desc="' .. beautiful.font_name .. 'Medium 20">' ..  t .. '</span>' end
 }
 styles.weekday = {
 	bg_color = beautiful.transparent,
@@ -267,7 +267,6 @@ end
 
 local calendar_widget = wibox.widget {
 	date = os.date('*t'),
-	font = beautiful.font_name .. " 16",
 	spacing = dpi(10),
 	fn_embed = decorate_cell,
 	widget = wibox.widget.calendar.month
@@ -426,10 +425,10 @@ local get_disk = function()
 	awful.spawn.easy_async_with_shell(script, function(stdout)
 		local disk_total = stdout:match('(%d+)[|]')
 		disk_total = disk_total / 1000
-		local disk_available = stdout:match('%d+[|](%d+)')
-		disk_available = disk_available / 1000
+		local disk_used = stdout:match('%d+[|](%d+)')
+		disk_used = disk_used / 1000
 
-		awesome.emit_signal("signal::disk", disk_total, disk_available)
+		awesome.emit_signal("signal::disk", disk_total, disk_used)
 	end)
 end
 
@@ -442,8 +441,8 @@ gears.timer {
 	end
 }
 
-awesome.connect_signal("signal::disk", function(disk_total, disk_available)
-	disk_bar:get_children_by_id('bar')[1].value = disk_available
+awesome.connect_signal("signal::disk", function(disk_total, disk_used)
+	disk_bar:get_children_by_id('bar')[1].value = disk_used
 	disk_bar:get_children_by_id('bar')[1].max_value = disk_total
 end)
 
@@ -472,12 +471,6 @@ how.align = 'center'
 local weather_icon = wibox.widget.textbox()
 weather_icon.font = beautiful.font_name .. " 72"
 weather_icon.align = 'center'
-
-awesome.connect_signal('signal::weather', function(temp, icon, what)
-	temperature.markup = coloring_text(temp .. "󰔄", beautiful.yellow)
-	how.markup = coloring_text(what, beautiful.fg_normal)
-	weather_icon.markup = coloring_text(icon, beautiful.fg_normal)
-end)
 
 local weather_widget = wibox.widget {
 	weather_icon,

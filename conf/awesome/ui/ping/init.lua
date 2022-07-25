@@ -94,7 +94,7 @@ naughty.connect_signal("request::display", function(n)
 			spacing = dpi(8),
 			layout = wibox.layout.flex.horizontal,
 		},
-		widget_template = action_widget,
+		widget_template = action_widget, -- See action_widget section ^
 		style = {
 			underline_normal = false,
 			underline_selected = true,
@@ -166,6 +166,11 @@ naughty.connect_signal("request::display", function(n)
 									font = beautiful.font_name .. " 12",
 									align = "left",
 									widget = wibox.widget.textbox,
+								},
+								{
+									actions,
+									visible = n.actions and #n.actions > 0,
+									widget = wibox.container.margin,
 								},
 								spacing = dpi(6),
 								layout = wibox.layout.fixed.vertical,
