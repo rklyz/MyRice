@@ -119,7 +119,7 @@ fc-cache -v
 systemctl enable mpd.service; systemctl start mpd.service
 ```
 
-You might wanna put your put your city inside awesome.signals.weather
+You might wanna put your city name inside awesome.signals.weather
 
 </details>
 
