@@ -26,7 +26,7 @@ I wouldn't mind.
 
 - **OS** - Endeavor OS
 - **WM**   - AwesomeWM
-- **Term**  -  URxvt
+- **Term**  -  Wezterm
 - **Comp**  -  Picom
 
 Nothing special
@@ -64,6 +64,7 @@ Well.. You just need to follow (or not) the following instructions given below
   - redshift
   - bluez
   - bluez-utils
+  - wezterm
 
 <br>
 
@@ -142,19 +143,7 @@ Ah yes, you need to change openweathermap id and your-place id in 'conf/awesome/
 
 <h3 align='center'>Desktop</h3>
 
-<img src="https://i.imgur.com/mgE86K9.png">
-
-<br>
-
-<h3 align='center'>Dashboard</h3>
-
-<img src="https://i.imgur.com/wLQSWaD.png">
-
-<br>
-
-<h3 align='center'>Logout Screen</h3>
-
-<img src="https://i.imgur.com/EMpOcgi.png">
+<img src="https://i.imgur.com/lPs1Y6s.png">
 
 <br>
 
@@ -169,9 +158,7 @@ Ah yes, you need to change openweathermap id and your-place id in 'conf/awesome/
 | Mod + Enter | Terminal |
 | Mod + Space | Layout   |
 | Mod + r     | Rofi      |
-| alt + z     | Dashboard|
 | alt + c     | Sidebar  |
-| alt + x     | Powermenu|
 | Mod + Ctrl + n | Un-minimize |
 
 Pretty Simple, huh
@@ -187,9 +174,9 @@ Just do not look at the keybind's awesome config. It's Messy..
 ### Improvement in the future
 
 - [x] Dashboard 
-- [x] Notifications enhancement
+- [ ] Notifications enhancement
 - [ ] Lock Screen 
-- [ ] Code-Cleaning
+- [x] Code-Cleaning
 
 <br>
 
