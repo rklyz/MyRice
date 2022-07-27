@@ -70,9 +70,8 @@ Well.. You just need to follow (or not) the following instructions given below
 **Required Fonts**
 
 - [Material Design Icons](https://materialdesignicons.com/)
-- Icomoon
+- Roboto
 - Iosevka
-- AzukifontBI
 
 <br>
 
