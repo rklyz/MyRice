@@ -3,4 +3,4 @@
 	url = https://github.com/BlingCorp/bling.git
 [submodule "conf/awesome/lib/rubato"]
 	path = conf/awesome/lib/rubato
-	url = https://github.com/andOrlando/rubato.git
+	url = https://github.com/andOrlando/rubato

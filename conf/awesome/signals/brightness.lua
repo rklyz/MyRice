@@ -1,3 +1,5 @@
+-- Copy cat from --> Elena
+
 -- Provides:
 -- signal::brightness
 --      percentage (integer)

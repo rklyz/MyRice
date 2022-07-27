@@ -1,51 +1,53 @@
--- awesome_mode: api-level=4:screen=on
--- If LuaRocks is installed, make sure that packages installed through it are
--- found (e.g. lgi). If LuaRocks is not installed, do nothing.
+--[[
+ ______     __     __     ______     ______     ______     __    __     ______     __     __     __    __    
+/\  __ \   /\ \  _ \ \   /\  ___\   /\  ___\   /\  __ \   /\ "-./  \   /\  ___\   /\ \  _ \ \   /\ "-./  \   
+\ \  __ \  \ \ \/ ".\ \  \ \  __\   \ \___  \  \ \ \/\ \  \ \ \-./\ \  \ \  __\   \ \ \/ ".\ \  \ \ \-./\ \  
+ \ \_\ \_\  \ \__/".~\_\  \ \_____\  \/\_____\  \ \_____\  \ \_\ \ \_\  \ \_____\  \ \__/".~\_\  \ \_\ \ \_\ 
+  \/_/\/_/   \/_/   \/_/   \/_____/   \/_____/   \/_____/   \/_/  \/_/   \/_____/   \/_/   \/_/   \/_/  \/_/ 
+                                                                                                             
+  --]]
+
 pcall(require, "luarocks.loader")
 
--- Standard awesome library
-local gears = require("gears")
-local awful = require("awful")
-require("awful.autofocus")
-local wibox = require("wibox")
-local beautiful = require("beautiful")
+local awful = require "awful"
+local gears = require "gears"
+local beautiful = require "beautiful"
+
+require "main.error_handling"
+
+beautiful.init(gears.filesystem.get_configuration_dir() .. "theme/theme.lua")
+
 local naughty = require("naughty")
 local ruled = require("ruled")
-local menubar = require("menubar")
-local hotkeys_popup = require("awful.hotkeys_popup")
-local gfs = require("gears.filesystem")
--- Enable hotkeys help widget for VIM and other apps
--- when client with a matching name is opened:
-require("awful.hotkeys_popup.keys")
 
+-- init config
+require "main.wallpaper"
+require "main.layout"
+require "main.rules"
+require "main.bindings.bindings"
+require "main.bindings.custom_bindings"
+require "main.tags"
+require "main.menu"
+
+require "awful.autofocus"
+
+-- init widget
+require "misc"
 require "signals"
-require "conf"
-require "ui"
 
--- Wallpaper
-screen.connect_signal("request::wallpaper", function(s)
-    awful.wallpaper {
-        screen = s,
-        widget = {
-            {
-                image     = beautiful.wallpaper,
-                upscale   = true,
-                downscale = true,
-                widget    = wibox.widget.imagebox,
-            },
-            valign = "center",
-            halign = "center",
-            tiled  = false,
-            widget = wibox.container.tile,
+ruled.notification.connect_signal('request::rules', function()
+    ruled.notification.append_rule {
+        rule       = { },
+        properties = {
+            screen           = awful.screen.preferred,
+            implicit_timeout = 5,
         }
     }
 end)
 
--- Mouse bindings
-awful.mouse.append_global_mousebindings({
-    awful.button({ }, 3, function () mainmenu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewprev),
-    awful.button({ }, 5, awful.tag.viewnext),
-})
+naughty.connect_signal("request::display", function(n)
+    naughty.layout.box { notification = n }
+end)
 
-gears.timer.start_new(600, function() collectgarbage("step", 1024) return true end)
+-- Autorun at startup
+awful.spawn.with_shell("bash ~/.config/awesome/main/autorun.sh")
