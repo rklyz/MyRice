@@ -121,13 +121,13 @@ fc-cache -v
 systemctl enable mpd.service; systemctl start mpd.service
 ```
 
+You might wanna put your put your city inside awesome.signals.weather
+
 </details>
 
 <br>
 
 **4. Restart your system & Log in with awesomeWM**
-
-Ah yes, you need to change openweathermap id and your-place id in 'conf/awesome/signals/weather'
 
 <br>
 
