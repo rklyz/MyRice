@@ -149,7 +149,7 @@ You might wanna put your city name inside awesome.signals.weather
 
 <br>
 
-### For the keybind..
+### Did you say keybind?
 
 | Keybinds    | Uses     |
 | ----------- | -------- |
@@ -158,10 +158,6 @@ You might wanna put your city name inside awesome.signals.weather
 | Mod + r     | Rofi      |
 | alt + c     | Sidebar  |
 | Mod + Ctrl + n | Un-minimize |
-
-Pretty Simple, huh
-
-Just do not look at the keybind's awesome config. It's Messy..
 
 <br>
 
@@ -193,5 +189,3 @@ Just do not look at the keybind's awesome config. It's Messy..
 <br>
 
 **And lastly.. To You Guys!**
-
-**Hope y'all have fun ricing and I wish you luck!**
