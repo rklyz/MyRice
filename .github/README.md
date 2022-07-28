@@ -171,7 +171,6 @@ Just do not look at the keybind's awesome config. It's Messy..
 
 ### Improvement in the future
 
-- [x] Dashboard 
 - [ ] Notifications enhancement
 - [ ] Lock Screen 
 - [x] Code-Cleaning
