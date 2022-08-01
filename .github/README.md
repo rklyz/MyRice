@@ -6,8 +6,8 @@
   My Rice..
 </h1>
 
-<img align='left' alt="GitHub Repo stars" src="https://img.shields.io/github/stars/N3k0Ch4n/dotRice?color=%23ffefd0&label=Stars&style=for-the-badge&labelColor=ffefd0">
-<img align='right' alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/N3k0Ch4n/Another_dotfiles/main?color=%2388aeda&label=Last Update%3F&style=for-the-badge&labelColor=88aeda">
+<img align='left' alt="GitHub Repo stars" src="https://img.shields.io/github/stars/rklyz/dotRice?color=%23ffefd0&label=Stars&style=for-the-badge&labelColor=ffefd0">
+<img align='right' alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/rklyz/Another_dotfiles/main?color=%2388aeda&label=Last Update%3F&style=for-the-badge&labelColor=88aeda">
 
 <br>
 
@@ -97,8 +97,8 @@ alsa-utils alsa-plugins alsa-firmware mpc xclip base-devel pamixer redshift
 <summary><b>2. Clone the repo</b></summary>
 
 ```sh
-git clone https://github.com/N3k0Ch4n/dotRice.git
-cd dotRice/conf/
+git clone https://github.com/rklyz/MyRice.git
+cd MyRice/conf/
 git submodule init
 git submodule update
 ```
