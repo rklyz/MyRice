@@ -6,8 +6,8 @@
   My Rice..
 </h1>
 
-<img align='left' alt="GitHub Repo stars" src="https://img.shields.io/github/stars/rklyz/dotRice?color=%23ffefd0&label=Stars&style=for-the-badge&labelColor=ffefd0">
-<img align='right' alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/rklyz/Another_dotfiles/main?color=%2388aeda&label=Last Update%3F&style=for-the-badge&labelColor=88aeda">
+<img align='left' alt="GitHub Repo stars" src="https://img.shields.io/github/stars/rklyz/MyRice?color=%23ffefd0&label=Stars&style=for-the-badge&labelColor=ffefd0">
+<img align='right' alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/rklyz/MyRice/main?color=%2388aeda&label=Last Update%3F&style=for-the-badge&labelColor=88aeda">
 
 <br>
 
