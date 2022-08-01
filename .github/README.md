@@ -1,14 +1,13 @@
 
 <h1 align='center'>
-  <img align='center' src='https://github.com/N3k0Ch4n/dotRice/blob/main/.github/hollow-knight-hornet.gif'>
   
   <br>
   
-  My Rice.. (Pls dont use it **yet**. it's still in development...
+  My Rice..
 </h1>
 
-<img align='left' alt="GitHub Repo stars" src="https://img.shields.io/github/stars/N3k0Ch4n/dotRice?color=%23ffefd0&label=Stars&style=for-the-badge&labelColor=ffefd0">
-<img align='right' alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/N3k0Ch4n/Another_dotfiles/main?color=%2388aeda&label=Last Update%3F&style=for-the-badge&labelColor=88aeda">
+<img align='left' alt="GitHub Repo stars" src="https://img.shields.io/github/stars/rklyz/MyRice?color=%23ffefd0&label=Stars&style=for-the-badge&labelColor=ffefd0">
+<img align='right' alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/rklyz/MyRice/main?color=%2388aeda&label=Last Update%3F&style=for-the-badge&labelColor=88aeda">
 
 <br>
 
@@ -26,7 +25,7 @@ I wouldn't mind.
 
 - **OS** - Endeavor OS
 - **WM**   - AwesomeWM
-- **Term**  -  URxvt
+- **Term**  -  Wezterm
 - **Comp**  -  Picom
 
 Nothing special
@@ -64,15 +63,15 @@ Well.. You just need to follow (or not) the following instructions given below
   - redshift
   - bluez
   - bluez-utils
+  - wezterm
 
 <br>
 
 **Required Fonts**
 
 - [Material Design Icons](https://materialdesignicons.com/)
-- Icomoon
+- Roboto
 - Iosevka
-- AzukifontBI
 
 <br>
 
@@ -98,8 +97,8 @@ alsa-utils alsa-plugins alsa-firmware mpc xclip base-devel pamixer redshift
 <summary><b>2. Clone the repo</b></summary>
 
 ```sh
-git clone https://github.com/N3k0Ch4n/dotRice.git
-cd dotRice/conf/
+git clone https://github.com/rklyz/MyRice.git
+cd MyRice/conf/
 git submodule init
 git submodule update
 ```
@@ -120,13 +119,13 @@ fc-cache -v
 systemctl enable mpd.service; systemctl start mpd.service
 ```
 
+You might wanna put your city name inside awesome.signals.weather
+
 </details>
 
 <br>
 
 **4. Restart your system & Log in with awesomeWM**
-
-Ah yes, you need to change openweathermap id and your-place id in 'conf/awesome/signals/weather'
 
 <br>
 
@@ -142,19 +141,7 @@ Ah yes, you need to change openweathermap id and your-place id in 'conf/awesome/
 
 <h3 align='center'>Desktop</h3>
 
-<img src="https://i.imgur.com/mgE86K9.png">
-
-<br>
-
-<h3 align='center'>Dashboard</h3>
-
-<img src="https://i.imgur.com/wLQSWaD.png">
-
-<br>
-
-<h3 align='center'>Logout Screen</h3>
-
-<img src="https://i.imgur.com/EMpOcgi.png">
+<img src="https://i.imgur.com/lPs1Y6s.png">
 
 <br>
 
@@ -162,21 +149,15 @@ Ah yes, you need to change openweathermap id and your-place id in 'conf/awesome/
 
 <br>
 
-### For the keybind..
+### Did you say keybind?
 
 | Keybinds    | Uses     |
 | ----------- | -------- |
 | Mod + Enter | Terminal |
 | Mod + Space | Layout   |
 | Mod + r     | Rofi      |
-| alt + z     | Dashboard|
 | alt + c     | Sidebar  |
-| alt + x     | Powermenu|
 | Mod + Ctrl + n | Un-minimize |
-
-Pretty Simple, huh
-
-Just do not look at the keybind's awesome config. It's Messy..
 
 <br>
 
@@ -186,10 +167,9 @@ Just do not look at the keybind's awesome config. It's Messy..
 
 ### Improvement in the future
 
-- [x] Dashboard 
-- [x] Notifications enhancement
+- [ ] Notifications enhancement
 - [ ] Lock Screen 
-- [ ] Code-Cleaning
+- [x] Code-Cleaning
 
 <br>
 
@@ -209,5 +189,3 @@ Just do not look at the keybind's awesome config. It's Messy..
 <br>
 
 **And lastly.. To You Guys!**
-
-**Hope y'all have fun ricing and I wish you luck!**
