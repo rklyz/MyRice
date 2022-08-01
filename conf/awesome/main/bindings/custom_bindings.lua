@@ -9,7 +9,8 @@ alt = "Mod1"
 
 awful.keyboard.append_global_keybindings({
 	awful.key({modkey}, "r", function() awful.spawn(apps.launcher, false) end), -- Rofi
-	awful.key({alt}, "c", function() awesome.emit_signal("sidebar::toggle") end) -- Sidebar
+	awful.key({alt}, "c", function() awesome.emit_signal("sidebar::toggle") end), -- Sidebar
+	awful.key({alt}, "t", function() awful.titlebar.toggle(client.focus) end) -- Toggle titlebar
 })
 
 -- Volume 

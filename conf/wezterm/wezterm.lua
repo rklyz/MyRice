@@ -4,7 +4,7 @@ return {
 	front_end = "OpenGL",
 	enable_wayland = false,
 
-	font_dirs = {"/home/raven/.local/share/fonts"},
+	font_dirs = {"/home/neko/.local/share/fonts"},
 	font = wezterm.font('Roboto Mono', {weight = 'Regular'}),
 	font_size = 13.0,
 	harfbuzz_features = {"calt=0", "clig=0", "liga=0"},
@@ -19,6 +19,12 @@ return {
 	cursor_blink_ease_in = 'Constant',
 	cursor_blink_ease_out = 'Constant',
 
+	visual_bell = {
+		fade_in_duration_ms = 75,
+		fade_out_duration_ms = 75,
+		target = 'CursorColor',
+	},
+
 	window_padding = {
 		left = '32pt',
 		right = '32pt',
@@ -27,67 +33,35 @@ return {
 	},
 
 	colors = {
-		foreground = '#C5C8C6',
-		background = '#101419',
+		foreground = '#33374c',
+		background = '#e8e9ec',
 
-		cursor_bg = '#C5C8C6',
-        	cursor_border = '#C5C8C6',
+		cursor_bg = '#33374c',
+        	cursor_border = '#33374c',
 
         	selection_fg = '#101419',
         	selection_bg = '#C5C8C6',
 
         	ansi = {
-               		'#323949',
-                	'#E6676B',
-                	'#A2E4B8',
-                	'#e2d06a',
-               		'#92bbed',
-                	'#ecc6e8',
-                	'#80ffff',
-                	'#cfebec',
+               		'#dcdfe7',
+                	'#cc517a',
+                	'#668e3d',
+                	'#c57339',
+               		'#2d539e',
+                	'#7759b4',
+                	'#3f83a6',
+                	'#33374c',
         	},
 
         	brights = {
-                	'#3d3e51',
-               		'#FF7377',
-                	'#AAF0C1',
-                	'#eadd94',
-                	'#bdd6f4',
-                	'#f9ecf7',
-                	'#b3ffff',
-                	'#edf7f8',
+                	'#8389a3',
+               		'#cc3768',
+                	'#598030',
+                	'#b6662d',
+                	'#22478e',
+                	'#6845ad',
+                	'#327698',
+                	'#262a3f',
         	},
-}
-
-	--[[colors = {
-		foreground = '#C5C8C6',
-		background = '#101419',
-		selection_fg = '#101419',
-		selection_bg = '#C5C8C6',
-		split = '#444444',
-
-		cursor_bg = '#C5C8C6',
-
-		ansi = {
-			'#242931',
-			'#e05f65',
-			'#78dba9',
-			'#f1cf8a',
-			'#70a5eb',
-			'#c68aee',
-			'#74bee9',
-			'#dee1e6',
-		},
-
-		brights = {
-			'#384148',
-			'#fc7b81',
-			'#94f7c5',
-			'#ffeba6',
-			'#8cc1ff',
-			'#e2a6ff',
-			'#90daff',
-			'#fafdff'
-		},
-	}--]]
+	}
 }

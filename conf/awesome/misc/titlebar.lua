@@ -37,12 +37,12 @@ local get_titlebar = function(c)
 	}
 
 	local container = wibox.widget {
-		bg = beautiful.bar,
+		bg = beautiful.bg,
 		shape = function(cr,w,h) gears.shape.partially_rounded_rect(cr,w,h,true,true,false,false,5) end,
 		widget = wibox.container.background,
 	}
 
-	c:connect_signal("focus", function() container.bg = beautiful.bg_alt end)
+	c:connect_signal("focus", function() container.bg = beautiful.bg end)
 	c:connect_signal("unfocus", function() container.bg = beautiful.bg end)
 
 	return wibox.widget {

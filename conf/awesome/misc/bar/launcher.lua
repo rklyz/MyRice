@@ -6,11 +6,11 @@ local beautiful = require "beautiful"
 local apps = require "main.apps"
 
 local launcher = wibox.widget.textbox()
-launcher.font = "Roboto Mono 16"
+launcher.font = "Roboto 16"
 launcher.markup = "󰍉"
 
 launcher:connect_signal("mouse::enter", function()
-	launcher.markup = "<span foreground='"..beautiful.black.."'>󰍉</span>"
+	launcher.markup = "<span foreground='"..beautiful.bg_alt.."'>󰍉</span>"
 end)
 
 launcher:connect_signal("mouse::leave", function()

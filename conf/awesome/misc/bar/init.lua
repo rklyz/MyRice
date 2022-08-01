@@ -10,6 +10,7 @@ local clock = require "misc.bar.clock"
 local wifi = require "misc.bar.wifi"
 local volume = require "misc.bar.volume"
 local launcher = require "misc.bar.launcher"
+local menu = require "misc.bar.menu"
 
 -- Right
 local right = wibox.widget {
@@ -17,6 +18,7 @@ local right = wibox.widget {
 		volume,
 		wifi,
 		clock,
+		launcher,
 		spacing = dpi(20),
 		layout = wibox.layout.fixed.horizontal,
 	},
@@ -27,7 +29,7 @@ local right = wibox.widget {
 -- Left
 local left = wibox.widget {
 	{
-		launcher,
+		menu,
 		layout = wibox.layout.fixed.horizontal,
 	},
 	margins = {top = dpi(4), bottom = dpi(4), left = dpi(10)},

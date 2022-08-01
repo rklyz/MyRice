@@ -8,7 +8,7 @@ local create_popup = function(color)
 
 	local slider = wibox.widget {
 		color = color,
-		background_color = beautiful.black,
+		background_color = beautiful.bg_alt,
 		bar_shape = gears.shape.rounded_bar,
 		shape = gears.shape.rounded_bar,
 		max_value = 100,

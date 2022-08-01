@@ -12,7 +12,7 @@ gears.timer {
 	autostart = true,
 	call_now = true,
 	callback = function()
-		clock.markup = os.date("%H:%M")
+		clock.markup = os.date("%a %H:%M")
 	end
 }
 

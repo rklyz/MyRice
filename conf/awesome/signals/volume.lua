@@ -20,7 +20,7 @@ local function emit_volume_info()
             local volume = stdout:match('(%d+)%% /')
             local muted = stdout:match('muted:(%s+)[yes]')
             local muted_int = muted and 1 or 0
-            local volume_int = tonumber(volume)
+            local volume_int = tonumber(volume) or 0
             -- Only send signal if there was a change
             -- We need this since we use `pactl subscribe` to detect
             -- volume events. These are not only triggered when the
