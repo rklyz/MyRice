@@ -74,21 +74,6 @@ Well.. You just need to follow (or not) the following instructions given below
 - Roboto
 - Iosevka
 
-<br>
-
-And some others I dont remember 💀
-  
-I Promise I'll list all of them when I get the time, okay?
-
-<br>
-
-For Arch linux (since I use them)
-
-```sh
-sudo pacman -S jq inotify-tools playerctl brightnessctl pulseaudio networkmanager rxvt-unicode mpd ncmpcpp \
-alsa-utils alsa-plugins alsa-firmware mpc xclip base-devel pamixer redshift
-```
-
 </details>
 
 <br>
