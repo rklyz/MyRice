@@ -137,12 +137,12 @@ bar_spacing = 1
 # background must also be defined in hex  or remain commented out. 1 = on, 0 = off.
 # You can define as many as 8 different colors. They range from bottom to top of screen
 gradient = 1
-gradient_count = 3
-gradient_color_1 = '#5EA9FF'
-gradient_color_2 = '#6AA1F8'
-gradient_color_3 = '#8291EA'
-gradient_color_4 = '#8D88E3'
-; gradient_color_5 = '#cca633'
+gradient_count = 5
+gradient_color_1 = '#F2E6C2'
+gradient_color_2 = '#E6E1CE'
+gradient_color_3 = '#DADCDA'
+gradient_color_4 = '#CED7E6'
+gradient_color_5 = '#C2D2F2'
 ; gradient_color_6 = '#cc8033'
 ; gradient_color_7 = '#cc5933'
 ; gradient_color_8 = '#cc3333'

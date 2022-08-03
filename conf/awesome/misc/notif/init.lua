@@ -48,7 +48,7 @@ local function create_notif(n)
 		{
 			{
 				{
-					markup = n.title,
+					markup = n.app_name,
 					widget = wibox.widget.textbox,
 				},
 				{
@@ -87,8 +87,17 @@ local function create_notif(n)
 			},
 			{
 				{
-					markup = n.message,
-					widget = wibox.widget.textbox,
+					{
+						markup = n.title,
+						align = 'center',
+						widget = wibox.widget.textbox,
+					},
+					{
+						markup = n.message,
+						widget = wibox.widget.textbox,
+					},
+					spacing = dpi(4),
+					layout = wibox.layout.fixed.vertical,
 				},
 				strategy = "max",
 				width = dpi(220),

@@ -9,7 +9,7 @@ bindkey -v
 
 # For a better Prompt
 precmd() { print "" }
-PS1='%B%(?.%K{73}.%K{167}) %k %F{195}%4~ / %k%b%f '
+PS1='%B%k %4~ / %k%b%f '
 PS2='%K{167} %K{235} -> %k '
 #RPROMPT='%K{234} %K{235} %F{230}%D{%H:%M} %K{167} %k'
 

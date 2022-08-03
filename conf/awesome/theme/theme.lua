@@ -23,9 +23,9 @@ local theme = {}
 
 ----- User Preferences -----
 
-theme.wallpaper =  home .. "/Downloads/withgirlblur.jpg"
+theme.wallpaper =  themes_path .. "assets/wall.jpg"
 
-theme.pfp = themes_path .. "assets/rklyz.jpg"
+theme.pfp = themes_path .. "assets/rklyz.png"
 theme.user = "Rklyz" --string.gsub(os.getenv('USER'), '^%l', string.upper)
 theme.hostname = "@Neptune"
 
@@ -51,20 +51,20 @@ theme.border_width        = dpi(0)
 
 -- Colors
 
-theme.black = "#33374c"
-theme.white = "#dcdfe7"
-theme.blue = "#2d539e"
-theme.yellow = "#c57339"
-theme.green = "#668e3d"
-theme.red = "#cc517a"
-theme.magenta = "#7759b4"
+theme.black = "#323333"
+theme.blue = "#8AA8E6"
+theme.yellow = "#E6B88A"
+theme.green = "#C6E687"
+theme.red = "#E68A8A"
+theme.magenta = "#C78AE6"
 theme.pink = "#E8B2C0"
+theme.white = "#E1E4E6"
 theme.transparent = "#00000000"
 
-theme.fg = "#33374c"
+theme.fg = "#18181A"
 
-theme.bg = "#e8e9ec"
-theme.bg_alt = "#d2d4dd"
+theme.bg = "#F2F2E9"
+theme.bg_alt = "#E1E4E6"
 
 -- Menu
 

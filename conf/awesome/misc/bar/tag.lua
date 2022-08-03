@@ -8,7 +8,7 @@ local dpi = beautiful.xresources.apply_dpi
 
 -- Colors
 local colors = {
-	beautiful.pink,
+	beautiful.magenta,
 	beautiful.red,
 	beautiful.yellow,
 	beautiful.green,
