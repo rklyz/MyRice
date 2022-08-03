@@ -105,6 +105,8 @@ fc-cache -v
 systemctl enable mpd.service; systemctl start mpd.service
 ```
 
+Change to your wall location at awesome.theme.theme
+
 You might wanna put your city name inside awesome.signals.weather
 
 </details>
