@@ -6,7 +6,7 @@
   My Rice..
 </h1>
 
-<img align='left' alt="GitHub Repo stars" src="https://img.shields.io/github/stars/rklyz/MyRice?color=%23E6B88A&logo=starship&style=for-the-badge">
+<img align='right' alt="GitHub Repo stars" src="https://img.shields.io/github/stars/rklyz/MyRice?color=%23E6B88A&logo=starship&style=for-the-badge">
 
 <br>
 
