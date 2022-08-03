@@ -146,7 +146,6 @@ You might wanna put your city name inside awesome.signals.weather
 - [ ] Notifications enhancement
 - [ ] Lock Screen 
 - [x] Code-Cleaning
-- [ ] [awesomewm ricing guide](https://github.com/rklyz/Awesome-Guide)
 
 <br>
 
