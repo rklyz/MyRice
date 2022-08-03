@@ -129,7 +129,7 @@ You might wanna put your city name inside awesome.signals.weather
 
 <h3 align='center'>Desktop</h3>
 
-<img src="https://i.imgur.com/lPs1Y6s.png">
+<img src="https://raw.githubusercontent.com/rklyz/MyRice/main/.github/montage.png">
 
 <br>
 
