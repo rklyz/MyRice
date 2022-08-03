@@ -6,15 +6,15 @@
   My Rice..
 </h1>
 
-<!--<img align='left' alt="GitHub Repo stars" src="https://img.shields.io/github/stars/rklyz/MyRice?color=%23ffefd0&label=Stars&style=for-the-badge&labelColor=ffefd0">
-<img align='right' alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/rklyz/MyRice/main?color=%2388aeda&label=Last Update%3F&style=for-the-badge&labelColor=88aeda">
--->
+<img align='left' alt="GitHub Repo stars" src="https://img.shields.io/github/stars/rklyz/MyRice?color=%23E6B88A&logo=starship&style=for-the-badge">
 
 <br>
 
 <br>
 
 <br>
+
+<img align='right' width='380px' src="https://raw.githubusercontent.com/rklyz/MyRice/main/.github/montage.png">
 
 An awesome(wm) **rice** that I made to get comfy experience for my daily usage.<br>
 
@@ -118,18 +118,6 @@ You might wanna put your city name inside awesome.signals.weather
 <br>
 
 **5. You're done!**
-
-<br>
-
----
-
-<br>
-
-### How it looks like..
-
-<h3 align='center'>Desktop</h3>
-
-<img src="https://raw.githubusercontent.com/rklyz/MyRice/main/.github/montage.png">
 
 <br>
 
