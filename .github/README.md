@@ -155,11 +155,11 @@ You might wanna put your city name inside awesome.signals.weather
 
 ### Million of Thanks to 💕
 
-- [Saimoom/Harry](https://github.com/saimoomedits/dotfiles)
-- [Elenapan](https://github.com/elenapan/dotfiles)
-- [Drahenprofi](https://github.com/drahenprofi/dotfiles)
-- [Rxyhn](https://github.com/rxyhn/dotfiles)
 - [Ner0z](https://github.com/ner0z/dotfiles)
+- [Drahenprofi](https://github.com/drahenprofi/dotfiles)
+- [Elenapan](https://github.com/elenapan/dotfiles)
+- [Saimoom/Harry](https://github.com/saimoomedits/dotfiles)
+- [Rxyhn](https://github.com/rxyhn/dotfiles)
 - [unix-parrot](https://github.com/unix-parrot)
 
 <br>
