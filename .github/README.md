@@ -141,6 +141,22 @@ You might wanna put your city name inside awesome.signals.weather
 
 <br>
 
+### Colorscheme
+
+The colorscheme that used in this rice is custom. (still doesn't have name yet)
+
+### Light
+
+<img width='300px' src='https://i.imgur.com/sXDJ3dw.png'>
+
+### Dark
+
+<img width='300px' src='https://i.imgur.com/SkdhTVQ.png'>
+
+---
+
+<br>
+
 ### Improvement in the future
 
 - [ ] Notifications enhancement
