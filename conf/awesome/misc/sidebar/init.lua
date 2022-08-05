@@ -17,6 +17,7 @@ local weather = require "misc.sidebar.weather"
 local temperature = require "misc.sidebar.temperature"
 local wifi = require "misc.sidebar.wifi"
 local uptime = require "misc.sidebar.uptime"
+local slider = require "misc.sidebar.sliders"
 
 -- Combine some widgets
 local widgets = wibox.widget {
@@ -32,6 +33,15 @@ local widgets = wibox.widget {
 		},
 		margins = {left = dpi(20), right = dpi(20)},
 		widget = wibox.container.margin,
+	},
+	expand = 'none',
+	layout = wibox.layout.align.horizontal,
+}
+
+local slider_widget = wibox.widget {
+	nil,
+	{
+		widget = slider
 	},
 	expand = 'none',
 	layout = wibox.layout.align.horizontal,
@@ -63,6 +73,8 @@ sidebar : setup {
 		space(30),
 		profile,
 		space(30),
+		slider_widget,
+		space(50),
 		widgets,
 		layout = wibox.layout.fixed.vertical,
 	},

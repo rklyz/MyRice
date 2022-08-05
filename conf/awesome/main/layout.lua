@@ -13,8 +13,34 @@ client.connect_signal("mouse::enter", function(c)
 	c:activate {context = "mouse_enter", raise = false}
 end)
 
-client.connect_signal("manage", function (c)
+client.connect_signal("request::manage", function (c)
 	if awesome.startup then awful.client.setslave(c) end
+end)
+
+-- Rounded Corners
+client.connect_signal("request::manage", function(c) 
+	if c.fullscreen or c.maximized then
+                c.shape = function(cr,w,h) gears.shape.rectangle(cr,w,h) end
+        else
+                c.shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,5) end
+        end
+end)
+
+-- Disable Rounded Corners when fullscreen or maximized
+local function disable_rounded(c) 
+	if c.fullscreen or c.maximized then 
+		c.shape = function(cr,w,h) gears.shape.rectangle(cr,w,h) end
+	else
+		c.shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,5) end
+	end
+end
+
+client.connect_signal("property::maximized", function(c)
+	disable_rounded(c)
+end)
+
+client.connect_signal("property::fullscreen", function(c)
+        disable_rounded(c)
 end)
 
 -- Restore client after tiling layout

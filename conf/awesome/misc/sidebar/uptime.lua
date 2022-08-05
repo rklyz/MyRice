@@ -12,7 +12,7 @@ icon.markup = "<span foreground='"..beautiful.yellow.."'>󰍹</span>"
 
 -- Uptime
 local uptime = wibox.widget.textbox()
-uptime.font = "Roboto Medium 20"
+uptime.font = "Roboto Medium 16"
 uptime.align = 'center'
 
 local function get_uptime() 

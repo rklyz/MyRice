@@ -11,7 +11,7 @@ icon.align = 'center'
 
 -- Wifi Name
 local wifi = wibox.widget.textbox()
-wifi.font = "Roboto Medium 20"
+wifi.font = "Roboto Medium 16"
 wifi.align = 'center'
 wifi.markup = "Connecting.." -- In case it's still fetching wifi name
 

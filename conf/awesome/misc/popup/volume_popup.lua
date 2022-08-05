@@ -4,7 +4,7 @@ local beautiful = require "beautiful"
 
 local create_popup = require "misc.popup.popup"
 
-local popup = create_popup(beautiful.black)
+local popup = create_popup(beautiful.fg)
 
 awesome.connect_signal("signal::volume", function(vol, mute)
 	vol = tonumber(vol)

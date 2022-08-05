@@ -6,7 +6,7 @@ return {
 
 	font_dirs = {"/home/neko/.local/share/fonts"},
 	font = wezterm.font('Roboto Mono', {weight = 'Regular'}),
-	font_size = 13.0,
+	font_size = 14.0,
 	harfbuzz_features = {"calt=0", "clig=0", "liga=0"},
 
 	enable_tab_bar = false,
@@ -43,24 +43,24 @@ return {
         	selection_bg = '#C5C8C6',
 
         	ansi = {
-               		'#E1E4E6',
-                	'#E68A8A',
-                	'#C6E687',
-                	'#E6B88A',
-               		'#8AA8E6',
-                	'#C78AE6',
-                	'#8AC7E6',
+               		'#E0DEDC',
+                	'#D96C6C',
+                	'#B5D96C',
+                	'#D9A36C',
+               		'#6C90D9',
+                	'#B56CD9',
+                	'#6CB5D9',
                 	'#323333',
         	},
 
         	brights = {
-                	'#E1E4E6',
-                        '#E68A8A',
-                        '#C6E687',
-                        '#E6B88A',
-                        '#8AA8E6',
-                        '#C78AE6',
-                        '#8AC7E6',
+			'#E0DEDC',
+                        '#D96C6C',
+                        '#B5D96C',
+                        '#D9A36C',
+                        '#6C90D9',
+                        '#B56CD9',
+                        '#6CB5D9',
                         '#323333',
         	},
 	}

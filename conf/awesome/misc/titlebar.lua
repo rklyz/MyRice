@@ -22,7 +22,7 @@ local get_titlebar = function(c)
 		awful.titlebar.widget.closebutton(c),
 		awful.titlebar.widget.maximizedbutton(c),
 		awful.titlebar.widget.minimizebutton(c),
-		spacing = dpi(10),
+		spacing = dpi(6),
 		layout = wibox.layout.fixed.horizontal,
 	}
 

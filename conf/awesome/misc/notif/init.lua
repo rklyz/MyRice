@@ -14,22 +14,30 @@ naughty.config.defaults.position = "top_right"
 
 local function create_notif(n) 
 	local time = os.date "%H:%M"
+	local icon_visibility
 
+	if n.icon == nil then 
+		icon_visibility = false
+	else
+		icon_visibility = true
+	end
+
+	-- Action widget
 	local action_widget = {
 		{
 			{
 				id = "text_role",
 				align = "center",
-				font = "Roboto bold 10",
+				font = "Roboto Mono 10",
 				widget = wibox.widget.textbox,
 			},
 			margins = {left = dpi(6), right = dpi(6)},
 			widget = wibox.container.margin,
 		},
-		bg = beautiful.bg_alt,
 		widget = wibox.container.background,
 	}
 
+	-- Apply action widget ^
 	local actions = wibox.widget {
 		notification = n,
 		base_layout = wibox.widget {
@@ -37,76 +45,58 @@ local function create_notif(n)
 			layout = wibox.layout.flex.horizontal,
 		},
 		widget_template = action_widget,
-		style = {
-			underline_normal = false,
-			underline_selected = false
-		},
 		widget = naughty.list.actions,
 	}
 
-	local head = wibox.widget {
+	local function space_h(length)
+		return wibox.widget {
+			forced_width = length,
+			layout = wibox.layout.fixed.horizontal,
+		}
+	end
+
+	-- Make other widgets
+	local title = wibox.widget.textbox()
+	title.font = "Roboto bold 14"
+	title.align = 'center'
+	title.markup = n.title
+
+	local message = wibox.widget.textbox()
+	message.font = "Roboto Mono 12"
+	message.align = 'center'
+	message.markup = n.message
+
+	local icon = wibox.widget {
+		nil,
 		{
 			{
-				{
-					markup = n.app_name,
-					widget = wibox.widget.textbox,
-				},
-				{
-					markup = time,
-					align = 'right',
-					widget = wibox.widget.textbox,
-				},
-				fill_space = true,
-				spacing = dpi(20),
-				layout = wibox.layout.fixed.horizontal,
+				image = n.icon,
+				visible = icon_visibility,
+				widget = wibox.widget.imagebox,
 			},
-			margins = {left = dpi(10), right = dpi(10)},
-			widget = wibox.container.margin,
+			strategy = "max",
+			width = dpi(60),
+			height = dpi(60),
+			widget = wibox.container.constraint,
 		},
-		forced_height = dpi(30),
-		bg = beautiful.bg_alt,
-		widget = wibox.container.background,
+		expand = 'none',
+		layout = wibox.layout.align.vertical,
 	}
 
-	local body = wibox.widget {
+	local container = wibox.widget {
 		{
+			title,
 			{
-				nil,
-				{
-					{
-						image = n.icon,
-						widget = wibox.widget.imagebox,
-					},
-					strategy = "max",
-					width = dpi(60),
-					height = dpi(60),
-					widget = wibox.container.constraint,
-				},
-				expand = 'none',
-				layout = wibox.layout.align.vertical,
+				icon,
+				space_h(dpi(10)),
+				message,
+				layout = wibox.layout.fixed.horizontal,
 			},
-			{
-				{
-					{
-						markup = n.title,
-						align = 'center',
-						widget = wibox.widget.textbox,
-					},
-					{
-						markup = n.message,
-						widget = wibox.widget.textbox,
-					},
-					spacing = dpi(4),
-					layout = wibox.layout.fixed.vertical,
-				},
-				strategy = "max",
-				width = dpi(220),
-				widget = wibox.container.constraint,
-			},
+			actions,
 			spacing = dpi(10),
-			layout = wibox.layout.fixed.horizontal,
+			layout = wibox.layout.fixed.vertical,
 		},
-		margins = dpi(10),
+		margins = dpi(20),
 		widget = wibox.container.margin,
 	}
 
@@ -118,15 +108,12 @@ local function create_notif(n)
 		widget_template = {
 			{
 				{
-					head,
-					body,
 					{
-						actions,
-						margins = { left = dpi(10), right = dpi(10), bottom = dpi(10)},
-						widget = wibox.container.margin,
+						widget = container,
 					},
-					spacing = dpi(0),
-					layout = wibox.layout.fixed.vertical,
+					strategy = "max",
+					width = dpi(620),
+					widget = wibox.container.constraint,
 				},
 				strategy = "min",
 				width = dpi(160),

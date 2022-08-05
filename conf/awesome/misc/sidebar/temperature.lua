@@ -12,7 +12,7 @@ icon.markup = "<span foreground='"..beautiful.red.."'>󰔏</span>"
 
 -- Feels like
 local feels_like = wibox.widget.textbox()
-feels_like.font = "Roboto Medium 20"
+feels_like.font = "Roboto Medium 16"
 feels_like.align = 'center'
 
 awesome.connect_signal("signal::weather", function(_, temp) 

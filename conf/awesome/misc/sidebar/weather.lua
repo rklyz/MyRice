@@ -12,10 +12,11 @@ icon.markup = "<span foreground='"..beautiful.blue.."'>󰖐</span>"
 
 -- How's weather?
 local hows_weather = wibox.widget.textbox()
-hows_weather.font = "Roboto Medium 20"
+hows_weather.font = "Roboto Medium 16"
 hows_weather.align = 'center'
 
-awesome.connect_signal("signal::weather", function(weather, _)	
+awesome.connect_signal("signal::weather", function(weather, _)
+	weather = tostring(weather)
 	weather = string.gsub(weather, "'", "")
 	hows_weather.markup = weather
 end)

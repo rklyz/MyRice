@@ -52,16 +52,16 @@ theme.border_width        = dpi(0)
 -- Colors
 
 theme.black = "#323333"
-theme.blue = "#8AA8E6"
-theme.yellow = "#E6B88A"
-theme.green = "#C6E687"
-theme.red = "#E68A8A"
-theme.magenta = "#C78AE6"
+theme.red = "#D96C6C"
+theme.green = "#B5D96C"
+theme.yellow = "#D9A36C"
+theme.blue = "#6C90D9"
+theme.magenta = "#B56CD9"
 theme.pink = "#E8B2C0"
-theme.white = "#E1E4E6"
+theme.white = "#E0DEDC"
 theme.transparent = "#00000000"
 
-theme.fg = "#18181A"
+theme.fg = "#33374c"
 
 theme.bg = "#F2F2E9"
 theme.bg_alt = "#E1E4E6"
