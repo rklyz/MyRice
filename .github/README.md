@@ -6,15 +6,15 @@
   My Rice..
 </h1>
 
-<!--<img align='left' alt="GitHub Repo stars" src="https://img.shields.io/github/stars/rklyz/MyRice?color=%23ffefd0&label=Stars&style=for-the-badge&labelColor=ffefd0">
-<img align='right' alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/rklyz/MyRice/main?color=%2388aeda&label=Last Update%3F&style=for-the-badge&labelColor=88aeda">
--->
+<img align='right' alt="GitHub Repo stars" src="https://img.shields.io/github/stars/rklyz/MyRice?color=%23E6B88A&logo=starship&style=for-the-badge">
 
 <br>
 
 <br>
 
 <br>
+
+<img align='right' width='380px' src="https://i.imgur.com/EUTOrDV.png">
 
 An awesome(wm) **rice** that I made to get comfy experience for my daily usage.<br>
 
@@ -125,18 +125,6 @@ You might wanna put your city name inside awesome.signals.weather
 
 <br>
 
-### How it looks like..
-
-<h3 align='center'>Desktop</h3>
-
-<img src="https://i.imgur.com/lPs1Y6s.png">
-
-<br>
-
----
-
-<br>
-
 ### Did you say keybind?
 
 | Keybinds    | Uses     |
@@ -148,6 +136,22 @@ You might wanna put your city name inside awesome.signals.weather
 | Mod + Ctrl + n | Un-minimize |
 
 <br>
+
+---
+
+<br>
+
+### Colorscheme
+
+The colorscheme that used in this rice is custom. (still doesn't have name yet)
+
+### Light
+
+<img width='300px' src='https://i.imgur.com/sXDJ3dw.png'>
+
+### Dark
+
+<img width='300px' src='https://i.imgur.com/SkdhTVQ.png'>
 
 ---
 
@@ -167,11 +171,11 @@ You might wanna put your city name inside awesome.signals.weather
 
 ### Million of Thanks to 💕
 
-- [Saimoom/Harry](https://github.com/saimoomedits/dotfiles)
-- [Elenapan](https://github.com/elenapan/dotfiles)
-- [Drahenprofi](https://github.com/drahenprofi/dotfiles)
-- [Rxyhn](https://github.com/rxyhn/dotfiles)
 - [Ner0z](https://github.com/ner0z/dotfiles)
+- [Drahenprofi](https://github.com/drahenprofi/dotfiles)
+- [Elenapan](https://github.com/elenapan/dotfiles)
+- [Saimoom/Harry](https://github.com/saimoomedits/dotfiles)
+- [Rxyhn](https://github.com/rxyhn/dotfiles)
 - [unix-parrot](https://github.com/unix-parrot)
 
 <br>

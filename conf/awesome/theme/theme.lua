@@ -26,7 +26,7 @@ local theme = {}
 theme.wallpaper =  themes_path .. "assets/wall.jpg"
 
 theme.pfp = themes_path .. "assets/rklyz.png"
-theme.user = "Rklyz" --string.gsub(os.getenv('USER'), '^%l', string.upper)
+theme.user = string.gsub(os.getenv('USER'), '^%l', string.upper)
 theme.hostname = "@Neptune"
 
 ----- Font -----
