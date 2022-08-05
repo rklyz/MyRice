@@ -14,7 +14,7 @@
 
 <br>
 
-<img align='right' width='380px' src="https://i.imgur.com/EUTOrDV.png">
+<img align='right' width='380px' src="https://i.imgur.com/pfo1nV6.png">
 
 An awesome(wm) **rice** that I made to get comfy experience for my daily usage.<br>
 
