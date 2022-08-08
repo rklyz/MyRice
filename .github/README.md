@@ -133,6 +133,7 @@ You might wanna put your city name inside awesome.signals.weather
 | Mod + Space | Layout   |
 | Mod + r     | Rofi      |
 | alt + c     | Sidebar  |
+| alt + x     | Lockscreen |
 | Mod + Ctrl + n | Un-minimize |
 
 <br>
@@ -159,8 +160,8 @@ The colorscheme that used in this rice is custom. (still doesn't have name yet)
 
 ### Improvement in the future
 
-- [ ] Notifications enhancement
-- [ ] Lock Screen 
+- [x] Notifications enhancement
+- [x] Lock Screen 
 - [x] Code-Cleaning
 
 <br>
