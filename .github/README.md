@@ -24,7 +24,7 @@ I wouldn't mind.
 
 ### My setup 🧰:
 
-- **OS** - Endeavor OS
+- **OS** - EndeavourOS
 - **WM**   - AwesomeWM
 - **Term**  -  Wezterm
 - **Comp**  -  Picom
