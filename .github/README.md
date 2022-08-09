@@ -161,7 +161,6 @@ The colorscheme that used in this rice is custom. (still doesn't have name yet)
 ### Improvement in the future
 
 - [x] Notifications enhancement
-- [x] Lock Screen 
 - [x] Code-Cleaning
 
 <br>
