@@ -51,7 +51,7 @@ Well.. You just need to follow (or not) the following instructions given below
   
   - [awesome-git](https://aur.archlinux.org/packages/awesome-git)
   - [mpd-mpris](https://github.com/natsukagami/mpd-mpris)
-  - [picom (pijulius fork)](https://github.com/pijulius/picom)
+  - [picom (ibhagwan fork)](https://github.com/ibhagwan/picom)
   - jq
   - inotify-tools
   - playerctl
@@ -60,10 +60,12 @@ Well.. You just need to follow (or not) the following instructions given below
   - network-manager
   - rxvt-unicode
   - mpd
+  - mpDris2
   - ncmpcpp
-  - redshift
-  - bluez
-  - bluez-utils
+  - xclip
+  - maim
+  - pamixer
+  - rofi
   - wezterm
 
 <br>
