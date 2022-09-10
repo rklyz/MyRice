@@ -104,7 +104,8 @@ cp -rf cava awesome mpd ncmpcpp picom $HOME/.config/
 cp -rf .Xresources .bashrc .vimrc .zshrc $HOME/
 cd ..; cp -rf misc/fonts/* $HOME/.local/share/fonts/
 fc-cache -v
-systemctl enable mpd.service; systemctl start mpd.service
+systemctl enable --user mpd.service; systemctl start mpd.service
+systemctl enable --user mpDris2.service; systemctl start mpd.service
 ```
 
 Change to your wall location at awesome.theme.theme
@@ -163,6 +164,7 @@ The colorscheme that used in this rice is custom. (still doesn't have name yet)
 ### Improvement in the future
 
 - [x] Notifications enhancement
+- [ ] Fixing bug
 - [x] Code-Cleaning
 
 <br>
