@@ -14,7 +14,7 @@
 
 <br>
 
-<img align='right' width='380px' src="https://i.imgur.com/pfo1nV6.png">
+<img align='right' width='500px' src="https://raw.githubusercontent.com/rklyz/MyRice/new_rice/.github/showcase.png">
 
 An awesome(wm) **rice** that I made to get comfy experience for my daily usage.<br>
 
