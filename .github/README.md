@@ -50,15 +50,13 @@ Well.. You just need to follow (or not) the following instructions given below
 <summary><b>1. Install the Dependencies</b></summary>
   
   - [awesome-git](https://aur.archlinux.org/packages/awesome-git)
-  - [mpd-mpris](https://github.com/natsukagami/mpd-mpris)
   - [picom (ibhagwan fork)](https://github.com/ibhagwan/picom)
   - jq
   - inotify-tools
   - playerctl
   - brightnessctl
-  - pulseaudio
+  - pulseaudio / pipewire-pulse
   - network-manager
-  - rxvt-unicode
   - mpd
   - mpDris2
   - ncmpcpp
@@ -67,6 +65,8 @@ Well.. You just need to follow (or not) the following instructions given below
   - pamixer
   - rofi
   - wezterm
+  - nvim
+  - feh
 
 <br>
 
@@ -75,6 +75,13 @@ Well.. You just need to follow (or not) the following instructions given below
 - [Material Design Icons](https://materialdesignicons.com/)
 - Roboto
 - Iosevka
+
+```sh
+# Arch Linux
+yay -S awesome-git mpd ncmpcpp jq inotify-tools playerctl brightnessctl \
+pulseaudio networkmanager mpdris2 xclip maim pamixer rofi wezterm \
+thunar nvim feh 
+```
 
 </details>
 
@@ -110,7 +117,9 @@ systemctl enable --user mpDris2.service; systemctl start mpd.service
 
 Change to your wall location at awesome.theme.theme
 
-You might wanna put your city name inside awesome.signals.weather
+Choose your /home disk in awesome.signals.disk. ex. /dev/sda2
+
+Put your city name inside awesome.signals.weather
 
 </details>
 
