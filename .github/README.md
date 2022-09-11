@@ -109,6 +109,7 @@ git submodule update
 ```sh
 cp -rf cava awesome mpd ncmpcpp picom $HOME/.config/
 cp -rf .Xresources .bashrc .vimrc .zshrc $HOME/
+mkdir $HOME/.local/share/fonts
 cd ..; cp -rf misc/fonts/* $HOME/.local/share/fonts/
 fc-cache -v
 systemctl enable --user mpd.service; systemctl start mpd.service
