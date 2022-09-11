@@ -74,7 +74,6 @@ Well.. You just need to follow (or not) the following instructions given below
 
 - [Material Design Icons](https://materialdesignicons.com/)
 - Roboto
-- Iosevka
 
 ```sh
 # Arch Linux
