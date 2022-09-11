@@ -11,6 +11,7 @@ naughty.config.defaults.screen = awful.screen.focused()
 naughty.config.defaults.timeout = 5
 naughty.config.defaults.title = "Notification"
 naughty.config.defaults.position = "top_right"
+naughty.config.defaults.border_width = 0
 
 local function create_notif(n) 
 	local time = os.date "%H:%M"
@@ -48,9 +49,10 @@ local function create_notif(n)
 		widget = naughty.list.actions,
 	}
 
-	local function space_h(length)
+	local function space_h(length, circumstances)
 		return wibox.widget {
 			forced_width = length,
+			visible = circumstances,
 			layout = wibox.layout.fixed.horizontal,
 		}
 	end
@@ -58,12 +60,12 @@ local function create_notif(n)
 	-- Make other widgets
 	local title = wibox.widget.textbox()
 	title.font = "Roboto bold 14"
-	title.align = 'center'
+	title.align = 'left'
 	title.markup = n.title
 
 	local message = wibox.widget.textbox()
 	message.font = "Roboto Mono 12"
-	message.align = 'center'
+	message.align = 'left'
 	message.markup = n.message
 
 	local icon = wibox.widget {
@@ -88,7 +90,7 @@ local function create_notif(n)
 			title,
 			{
 				icon,
-				space_h(dpi(10)),
+				space_h(dpi(10), icon_visibility),
 				message,
 				layout = wibox.layout.fixed.horizontal,
 			},
@@ -104,6 +106,7 @@ local function create_notif(n)
 		notification = n,
 		type = "notification",
 		bg = beautiful.bg,
+		border_width = 0,
 		shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,5) end,
 		widget_template = {
 			{
@@ -121,7 +124,6 @@ local function create_notif(n)
 				widget = wibox.container.constraint,
 			},
 			bg = beautiful.bg,
-			shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,5) end,
 			widget = wibox.container.background,	
 		}
 	}

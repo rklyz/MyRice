@@ -1,5 +1,10 @@
 local wezterm = require 'wezterm'
 
+local light = require 'light'
+local dark = require 'dark'
+
+local theme = dark
+
 return {
 	front_end = "OpenGL",
 	enable_wayland = false,
@@ -33,35 +38,35 @@ return {
 	},
 
 	colors = {
-		foreground = '#18181A',
-		background = '#F2F2E9',
+		foreground = theme.foreground,
+		background = theme.background,
 
-		cursor_bg = '#111317',
-        	cursor_border = '#111317',
+		cursor_bg = theme.cursor_bg,
+    cursor_border = theme.cursor_border,
 
-        	selection_fg = '#101419',
-        	selection_bg = '#C5C8C6',
+		selection_fg = theme.selection_fg,
+		selection_bg = theme.selection_bg,
 
-        	ansi = {
-               		'#E0DEDC',
-                	'#D96C6C',
-                	'#B5D96C',
-                	'#D9A36C',
-               		'#6C90D9',
-                	'#B56CD9',
-                	'#6CB5D9',
-                	'#323333',
-        	},
+		ansi = {
+			theme.ansi[1],
+			theme.ansi[2],
+			theme.ansi[3],
+			theme.ansi[4],
+			theme.ansi[5],
+			theme.ansi[6],
+      theme.ansi[7],
+      theme.ansi[8],
+    },
 
-        	brights = {
-			'#E0DEDC',
-                        '#D96C6C',
-                        '#B5D96C',
-                        '#D9A36C',
-                        '#6C90D9',
-                        '#B56CD9',
-                        '#6CB5D9',
-                        '#323333',
-        	},
+    brights = {
+			theme.brights[1],
+      theme.brights[2],
+      theme.brights[3],
+      theme.brights[4],
+      theme.brights[5],
+      theme.brights[6],
+      theme.brights[7],
+      theme.brights[8],
+    },
 	}
 }

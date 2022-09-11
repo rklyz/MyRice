@@ -2,6 +2,7 @@ local awful = require "awful"
 local gears = require "gears"
 local wibox = require "wibox"
 local beautiful = require "beautiful"
+local dpi = beautiful.xresources.apply_dpi
 
 -- Wifi
 local wifi = wibox.widget.textbox()
@@ -22,19 +23,19 @@ local function get_wifi()
 			awful.spawn.easy_async_with_shell(get_strength, function(stdout)
 				local strength = tonumber(stdout)
 				if strength < 20 then
-					wifi.markup = "󰤯"
+					wifi.markup = "<span foreground='"..beautiful.green.."'>󰤯</span>"
 				elseif strength < 40 then
-					wifi.markup = "󰤟"
+					wifi.markup = "<span foreground='"..beautiful.green.."'>󰤟</span>"
 				elseif strength < 60 then
-					wifi.markup = "󰤢"
+					wifi.markup = "<span foreground='"..beautiful.green.."'>󰤢</span>"
 				elseif strength < 80 then
-					wifi.markup = "󰤥"
+					wifi.markup = "<span foreground='"..beautiful.green.."'>󰤥</span>"
 				else
-					wifi.markup = "󰤨"
+					wifi.markup = "<span foreground='"..beautiful.green.."'>󰤨</span>"
 				end
 			end)
 		else
-			wifi.markup = "󰤭"
+			wifi.markup = "<span foreground='"..beautiful.red.."'>󰤭</span>"
 		end
 	end)
 end

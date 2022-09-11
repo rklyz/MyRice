@@ -28,7 +28,7 @@ ruled.client.connect_signal("request::rules", function()
 
 	-- Apps Rules
 	ruled.client.append_rule {
-		rule = { class = apps["picture"] },
+		rule = { class = apps.picture },
 		properties = {
 			titlebars_enabled = false
 		},

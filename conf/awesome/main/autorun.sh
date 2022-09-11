@@ -1,3 +1,3 @@
 #!/bin/bash
 
-picom --config $HOME/.config/picom/picom.conf --experimental-backends
+picom --config .config/picom/picom.conf

@@ -8,44 +8,65 @@ local rubato = require "lib.rubato"
 
 -- Var
 local width = dpi(420)
-local height = awful.screen.focused().geometry.height
+local height = awful.screen.focused().geometry.height - dpi(100)
 
--- Get widgets
-local clock = require "misc.sidebar.clock"
-local profile = require "misc.sidebar.profile"
-local weather = require "misc.sidebar.weather"
-local temperature = require "misc.sidebar.temperature"
-local wifi = require "misc.sidebar.wifi"
-local uptime = require "misc.sidebar.uptime"
-local slider = require "misc.sidebar.sliders"
+-- Helper
+-----------
 
--- Combine some widgets
-local widgets = wibox.widget {
-	nil,
-	{
+local function round_widget(radius)
+	return function(cr,w,h)
+		gears.shape.rounded_rect(cr,w,h,radius)
+	end
+end
+
+local function center_widget(widgets)
+	return wibox.widget {
+		nil,
 		{
-			weather,
-			temperature,
-			wifi,
-			uptime,
-			spacing = dpi(40),
-			layout = wibox.layout.fixed.vertical,
+			nil,
+			widgets,
+			expand = 'none',
+			layout = wibox.layout.align.horizontal,
+		},
+		expand = 'none',
+		layout = wibox.layout.align.vertical,
+	}
+end
+
+local function box_widget(widgets, width, height)
+	--local centered_widget = center_widget(widgets)
+
+	return wibox.widget {
+		{
+			{
+				widgets,
+				margins = dpi(16),
+				widget = wibox.container.margin,
+			},
+			forced_width = dpi(width),
+			forced_height = dpi(height),
+			shape = round_widget(8),
+			bg = beautiful.bg_alt,
+			widget = wibox.container.background,
 		},
 		margins = {left = dpi(20), right = dpi(20)},
 		widget = wibox.container.margin,
-	},
-	expand = 'none',
-	layout = wibox.layout.align.horizontal,
-}
+	}
+end
 
-local slider_widget = wibox.widget {
-	nil,
-	{
-		widget = slider
-	},
-	expand = 'none',
-	layout = wibox.layout.align.horizontal,
-}
+local aa = wibox.widget.textbox()
+
+-- Get widgets
+local profile_widget = require "misc.sidebar.profile"
+local player_widget = require "misc.sidebar.player"
+local stats_widget = require "misc.sidebar.stats"
+local calendar_widget = require "misc.sidebar.calendar"
+
+-- Combine some widgets
+local profile = box_widget(profile_widget, 380, 210)
+local player = box_widget(player_widget, 380, 150)
+local stats = box_widget(stats_widget, 380, 180)
+local calendar = box_widget(calendar_widget, 380, 330)
 
 -- Spacing
 local space = function(height)
@@ -61,25 +82,22 @@ local sidebar = wibox {
 	ontop = true,
 	width = width,
 	height = height,
+	y = dpi(20),
 	bg = beautiful.bg,
-	type = 'dock'
 }
 
 -- Sidebar widget setup
 sidebar : setup {
-	nil,
 	{
-		clock,
-		space(30),
 		profile,
-		space(30),
-		slider_widget,
-		space(50),
-		widgets,
+		player,
+		stats,
+		calendar,
+		spacing = dpi(20),
 		layout = wibox.layout.fixed.vertical,
 	},
-	expand = 'none',
-	layout = wibox.layout.align.vertical, 
+	margins = { top = dpi(20), bottom = dpi(20)},
+	widget = wibox.container.margin,
 }
 
 -- Slide animation
@@ -108,7 +126,7 @@ sidebar.toggle = function()
 		slide.target = awful.screen.focused().geometry.x - sidebar.width
 		sidebar.timer:start()
 	else
-		slide.target = awful.screen.focused().geometry.x
+		slide.target = awful.screen.focused().geometry.x + dpi(20)
 		sidebar.visible = not sidebar.visible
 	end
 end

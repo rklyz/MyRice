@@ -4,3 +4,6 @@
 [submodule "conf/awesome/lib/rubato"]
 	path = conf/awesome/lib/rubato
 	url = https://github.com/andOrlando/rubato
+[submodule "conf/awesome/awesome/lib/rubato"]
+	path = conf/awesome/awesome/lib/rubato
+	url = https://github.com/andOrlando/rubato

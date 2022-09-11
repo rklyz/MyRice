@@ -1,18 +1,24 @@
-sw_volume: 50
+sw_volume: 100
 audio_device_state:0:My ALSA Device
 audio_device_state:1:My Pulse Output
 audio_device_state:1:Visualizer
-state: stop
-current: 0
+state: pause
+current: 5
+time: 124.814000
 random: 0
-repeat: 0
-single: 1
+repeat: 1
+single: 0
 consume: 0
 crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Al-Fatihah.mp3
-1:Al-Ma'idah.mp3
-2:Glass Animals - Heat Waves-rfTgO9rpqck.mp3
+0:Astronout in The Ocean.mp3
+1:Why we lose.mp3
+2:Piano Stardew Valley.mp3
+3:Glass Animals - Heat Waves-rfTgO9rpqck.mp3
+4:YOASOBI - ハルジオン・Halzion (Lone Alpha Remix).mp3
+5:YOASOBI - 夜に駆ける_Yoru ni Kakeru THE HOME TAKE.mp3
+6:Yoasobi Ano Yume O Nazotte.mp3
+7:Yoasobi Love Letter.mp3
 playlist_end
