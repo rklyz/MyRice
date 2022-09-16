@@ -1,4 +1,3 @@
-
 <h1 align='center'>
   
   <br>
@@ -25,9 +24,9 @@ I wouldn't mind.
 ### My setup 🧰:
 
 - **OS** - EndeavourOS
-- **WM**   - AwesomeWM
-- **Term**  -  Wezterm
-- **Comp**  -  Picom
+- **WM** - AwesomeWM
+- **Term** - Wezterm
+- **Comp** - Picom
 
 Nothing special
 
@@ -65,7 +64,7 @@ Well.. You just need to follow (or not) the following instructions given below
   - pamixer
   - rofi
   - wezterm
-  - nvim
+  - neovim
   - feh
 
 <br>
@@ -79,7 +78,7 @@ Well.. You just need to follow (or not) the following instructions given below
 # Arch Linux
 yay -S awesome-git mpd ncmpcpp jq inotify-tools playerctl brightnessctl \
 pulseaudio networkmanager mpdris2 xclip maim pamixer rofi wezterm \
-thunar nvim feh 
+thunar neovim feh
 ```
 
 </details>
@@ -139,13 +138,13 @@ Put your city name inside awesome.signals.weather
 
 ### Did you say keybind?
 
-| Keybinds    | Uses     |
-| ----------- | -------- |
-| Mod + Enter | Terminal |
-| Mod + Space | Layout   |
-| Mod + r     | Rofi      |
-| alt + c     | Sidebar  |
-| alt + x     | Lockscreen |
+| Keybinds       | Uses        |
+| -------------- | ----------- |
+| Mod + Enter    | Terminal    |
+| Mod + Space    | Layout      |
+| Mod + r        | Rofi        |
+| alt + c        | Sidebar     |
+| alt + x        | Lockscreen  |
 | Mod + Ctrl + n | Un-minimize |
 
 <br>
