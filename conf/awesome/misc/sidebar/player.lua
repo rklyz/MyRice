@@ -11,7 +11,7 @@ local dpi = beautiful.xresources.apply_dpi
 local title = wibox.widget.textbox()
 title.font = "Roboto Medium 16"
 title.align = "left"
-title.valign = "bottom"
+title.valign = "center"
 
 -- Song's Artist
 local artist = wibox.widget.textbox()
@@ -86,7 +86,6 @@ return wibox.widget {
 		{
 			title,
 			artist,
-			spacing = dpi(12),
 			layout = wibox.layout.fixed.vertical,
 		},
 		expand = 'none',
