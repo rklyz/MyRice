@@ -13,7 +13,7 @@ local bat_desc
 
 local function get_bat()
 	awful.spawn.easy_async(have_battery, function(stdout)
-		if not stdout:match("BAT") then
+		if not stdout:match("%d+") then
 			bat_value = 0
 			bat_desc = "No Battery"
 			awesome.emit_signal("signal::bat", bat_value, bat_desc)
