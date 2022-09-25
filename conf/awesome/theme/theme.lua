@@ -60,10 +60,10 @@ theme.bg_alt = colors.bg_alt
 ----- General/default Settings -----
 
 theme.bg_normal     = theme.bg
-theme.bg_focus      = "#e8e9ec"
-theme.bg_urgent     = "#e8e9ec"
-theme.bg_minimize   = "#e8e9ec"
-theme.bg_systray    = "#e8e9ec"
+theme.bg_focus      = "#212126"
+theme.bg_urgent     = "#212126"
+theme.bg_minimize   = "#212126"
+theme.bg_systray    = "#212126"
 
 theme.fg_normal     = theme.fg
 theme.fg_focus      = theme.fg_normal

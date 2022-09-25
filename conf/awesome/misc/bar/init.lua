@@ -35,9 +35,29 @@ local info = wibox.widget {
 	widget = wibox.container.margin,
 }
 
+-- Systray
+local systray = wibox.widget {
+	{
+		{
+			{
+        wibox.widget.systray,
+				layout = wibox.layout.fixed.horizontal,
+			},
+			margins = {top = dpi(2), bottom = dpi(2), left = dpi(6), right = dpi(6)},
+			widget = wibox.container.margin,
+		},
+		shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,8) end,
+		bg = beautiful.bg_alt,
+		widget = wibox.container.background,
+	},
+	margins = {top = dpi(6), bottom = dpi(6)},
+	widget = wibox.container.margin,
+}
+
 -- Right
 local right = wibox.widget {
 	{
+    systray,
 		info,
 		clock,
 		launcher,
