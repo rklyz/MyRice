@@ -105,7 +105,7 @@ git submodule update
 <summary><b>3. Copy the config file</b></summary>
 
 ```sh
-cp -rf cava awesome mpd ncmpcpp picom $HOME/.config/
+cp -rf cava awesome mpd ncmpcpp picom wezterm mpDris2 $HOME/.config/
 cp -rf .Xresources .bashrc .vimrc .zshrc $HOME/
 mkdir $HOME/.local/share/fonts
 cd ..; cp -rf misc/fonts/* $HOME/.local/share/fonts/
