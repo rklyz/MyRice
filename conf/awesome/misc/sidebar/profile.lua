@@ -35,7 +35,7 @@ local hostname = wibox.widget.textbox()
 hostname.font = "Roboto Regular 14"
 hostname.align = 'left'
 
-awful.spawn.easy_async_with_shell("echo $HOST", function(stdout)
+awful.spawn.easy_async_with_shell("cat /proc/sys/kernel/hostname", function(stdout)
 	hostname.markup = "@"..tostring(stdout)
 end)
 
