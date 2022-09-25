@@ -8,7 +8,7 @@ local clock = wibox.widget.textbox()
 clock.font = "Roboto Medium 14"
 
 gears.timer {
-	timeout = 60,
+	timeout = 30,
 	autostart = true,
 	call_now = true,
 	callback = function()

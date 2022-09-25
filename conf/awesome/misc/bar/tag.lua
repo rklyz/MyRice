@@ -20,7 +20,7 @@ local function update_tag(item, tag, index)
 	elseif #tag:clients() > 0 then
 		item:get_children_by_id("tag")[1].markup = "<span foreground='"..beautiful.fg.."'>◇</span>"
 	else
-		item:get_children_by_id("tag")[1].markup = "<span foreground='"..beautiful.black.."'>◇</span>"
+		item:get_children_by_id("tag")[1].markup = "<span foreground='"..beautiful.bg_alt.."'>◇</span>"
 	end
 end
 

@@ -23,7 +23,7 @@ local theme = {}
 
 ----- User Preferences -----
 
-theme.wallpaper =  themes_path.."assets/wall.jpg" -- Comment this to use feh
+theme.wallpaper =  themes_path.."assets/wall.png" -- Comment this to use feh
 
 theme.pfp = themes_path .. "assets/pfp.jpg"
 theme.user = string.gsub(os.getenv('USER'), '^%l', string.upper)
