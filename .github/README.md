@@ -66,6 +66,7 @@ Well.. You just need to follow (or not) the following instructions given below
   - wezterm
   - neovim
   - feh
+  - zsh
 
 <br>
 
@@ -78,7 +79,7 @@ Well.. You just need to follow (or not) the following instructions given below
 # Arch Linux
 yay -S awesome-git mpd ncmpcpp jq inotify-tools playerctl brightnessctl \
 pulseaudio networkmanager mpdris2 xclip maim pamixer rofi wezterm \
-thunar neovim feh
+thunar neovim feh zsh
 ```
 
 </details>
