@@ -4,14 +4,9 @@ local gears = require "gears"
 local city = "" -- Ex. London or Salt+Lake+City
 
 local get_weather = function()
-	local script = [[
-	weather=$(curl -sf "wttr.in/]] .. city .. [[?format='%C:%f'")
-	if [ ! -z $weather ]; then
-		echo $weather
-	else
-		echo "Weather unavailable"
-	fi
-	]]
+  local script = [[
+    bash -c "$HOME/.config/awesome/signals/weather_script.sh ]] .. city.. [["
+  ]]
 
 	awful.spawn.easy_async_with_shell(script, function(stdout)
 		local weather = stdout:match("(.+):")
