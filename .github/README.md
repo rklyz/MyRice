@@ -189,8 +189,12 @@ The colorscheme that used in this rice is custom. (still doesn't have name yet)
 - [Elenapan](https://github.com/elenapan/dotfiles)
 - [Saimoom/Harry](https://github.com/saimoomedits/dotfiles)
 - [Rxyhn](https://github.com/rxyhn/dotfiles)
+
+### Contributers :wrench:
+
+- [Rony](https://github.com/ronylee11)
 - [unix-parrot](https://github.com/unix-parrot)
 
 <br>
 
-**And lastly.. To You Guys!**
+**<samp>Last but not least.. You guys!<samp/>**
