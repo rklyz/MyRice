@@ -111,8 +111,8 @@ cp -rf .Xresources .bashrc .vimrc .zshrc $HOME/
 mkdir $HOME/.local/share/fonts
 cd ..; cp -rf misc/fonts/* $HOME/.local/share/fonts/
 fc-cache -v
-systemctl enable --user mpd.service; systemctl start mpd.service
-systemctl enable --user mpDris2.service; systemctl start mpd.service
+systemctl enable --user mpd.service; systemctl start --user mpd.service
+systemctl enable --user mpDris2.service; systemctl start --user mpDris2.service
 ```
 
 Change to your wall location at awesome.theme.theme
