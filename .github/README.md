@@ -190,7 +190,7 @@ The colorscheme that used in this rice is custom. (still doesn't have name yet)
 - [Saimoom/Harry](https://github.com/saimoomedits/dotfiles)
 - [Rxyhn](https://github.com/rxyhn/dotfiles)
 
-### Contributers :wrench:
+### Contributors :wrench:
 
 - [Rony](https://github.com/ronylee11)
 - [unix-parrot](https://github.com/unix-parrot)
