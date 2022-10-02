@@ -22,6 +22,9 @@ local function get_wifi()
 
 			awful.spawn.easy_async_with_shell(get_strength, function(stdout)
 				local strength = tonumber(stdout)
+        if strength == nil then
+          strength = 0
+        end
 				if strength < 20 then
 					wifi.markup = "<span foreground='"..beautiful.green.."'>󰤯</span>"
 				elseif strength < 40 then
