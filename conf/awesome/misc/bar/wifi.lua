@@ -10,21 +10,18 @@ wifi.font = "Roboto Medium 16"
 
 local function get_wifi()
 	local script = [[
-	nmcli g | tail -1 | awk '{printf $1}'
+	nmcli -g CONNECTIVITY g
 	]]
 
 	awful.spawn.easy_async_with_shell(script, function(stdout)
 		local status = tostring(stdout)
-		if not status:match("disconnected") then
+		if not status:match("none") then
 			local get_strength = [[
 			awk '/^\s*w/ { print  int($3 * 100 / 70) }' /proc/net/wireless
 			]]
 
 			awful.spawn.easy_async_with_shell(get_strength, function(stdout)
 				local strength = tonumber(stdout)
-        if strength == nil then
-          strength = 0
-        end
 				if strength < 20 then
 					wifi.markup = "<span foreground='"..beautiful.green.."'>󰤯</span>"
 				elseif strength < 40 then
