@@ -43,7 +43,6 @@ local systray = wibox.widget {
         wibox.widget.systray,
 				layout = wibox.layout.fixed.horizontal,
 			},
-			margins = {top = dpi(2), bottom = dpi(2), left = dpi(6), right = dpi(6)},
 			widget = wibox.container.margin,
 		},
 		shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,8) end,
