@@ -32,11 +32,14 @@ user.markup = "<span foreground='"..beautiful.fg.."'>"..beautiful.user.."</span>
 
 -- Hostname
 local hostname = wibox.widget.textbox()
-hostname.font = "Roboto Regular 14"
+--hostname.font = "Roboto Regular 14"
+hostname.font = "Grape Nuts Bold 18"
 hostname.align = 'left'
 
 awful.spawn.easy_async_with_shell("cat /proc/sys/kernel/hostname", function(stdout)
-	hostname.markup = "@"..tostring(stdout)
+  --hostname.markup = "@"..tostring(stdout)
+  --hostname.markup = "♏"..tostring("Scorpio")
+  hostname.markup = "-"..tostring("Scorpio").."- ♏︎"
 end)
 
 -- Weather Icon
@@ -88,7 +91,12 @@ awesome.connect_signal("signal::weather", function(hows_weather, feels_like)
 	hows_weather = string.gsub(hows_weather, "'", "")
 	feels_like = string.gsub(feels_like, "\n", "")
 	the_weather.markup = hows_weather
-	temperature.markup = feels_like:match("%d%d").."°C"
+  --temperature.markup = feels_like:match("%d%d").."°C"
+  if feels_like:match("%d%d") == nil then
+    temperature.markup = "??°C"
+  else
+    temperature.markup = feels_like:match("%d%d").."°C"
+  end
 end)
 
 -- Spacing horizontally
@@ -101,9 +109,9 @@ local space = wibox.widget {
 ---------------------
 
 local name = wibox.widget {
-	user,
+  user,
 	hostname,
-	spacing = dpi(4),
+  spacing = dpi(-5),
 	layout = wibox.layout.fixed.vertical,
 }
 
@@ -135,6 +143,7 @@ return wibox.widget {
 	{
 		name,
 		weather,
+    spacing = dpi(10),
 		layout = wibox.layout.fixed.vertical,
 	},
 	spacing = dpi(30),
