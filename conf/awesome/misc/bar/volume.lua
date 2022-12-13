@@ -17,6 +17,7 @@ awesome.connect_signal("signal::volume", function(vol, mute)
 		volume.markup = "<span foreground='"..beautiful.red.."'>󰸈</span>"
 		percentage.markup = "Muted"
 	else
+    if vol == nil then vol = 0 end
 		if vol < 20 then
 			volume.markup = "<span foreground='"..beautiful.red.."'>󰕿</span>"
 			percentage.markup = vol .. "%"

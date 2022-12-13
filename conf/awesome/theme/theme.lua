@@ -26,7 +26,7 @@ local theme = {}
 theme.wallpaper =  themes_path.."assets/wall.jpg" -- Comment this to use feh
 
 --theme.pfp = themes_path .. "assets/pfp.jpg"
-theme.pfp = themes_path .. "assets/cleff.jpg"
+theme.pfp = themes_path .. "assets/tifa.jpg"
 theme.user = string.gsub(os.getenv('USER'), '^%l', string.upper)
 --theme.hostname = "@Neptune"
 

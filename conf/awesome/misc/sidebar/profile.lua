@@ -35,12 +35,7 @@ local hostname = wibox.widget.textbox()
 --hostname.font = "Roboto Regular 14"
 hostname.font = "Grape Nuts Bold 18"
 hostname.align = 'left'
-
-awful.spawn.easy_async_with_shell("cat /proc/sys/kernel/hostname", function(stdout)
-  --hostname.markup = "@"..tostring(stdout)
-  --hostname.markup = "♏"..tostring("Scorpio")
-  hostname.markup = "-"..tostring("Scorpio").."- ♏︎"
-end)
+hostname.markup = "-"..tostring("Scorpio").."-"
 
 -- Weather Icon
 local weather_icon = wibox.widget.imagebox()
