@@ -85,7 +85,7 @@ return wibox.widget {
 		nil,
 		{
 			title,
-			artist,
+      artist,
 			layout = wibox.layout.fixed.vertical,
 		},
 		expand = 'none',

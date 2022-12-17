@@ -16,7 +16,7 @@ local function set_wall(s)
 			},
 			valign = "center",
 			halign = "center",
-			tiled = false,
+			tiled = true,
 			widget = wibox.container.tile,
 		}
 	}
@@ -26,6 +26,7 @@ screen.connect_signal("request::wallpaper", function(s)
 	if not use_feh then
 		set_wall(s)
 	else
-		awful.spawn("feh --bg-fill "..beautiful.wallpaper, false)
+    --awful.spawn("feh --bg-fill "..beautiful.wallpaper, false)
+    awful.spawn.with_shell("~/.fehbg", false)
 	end
 end)

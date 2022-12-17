@@ -35,23 +35,22 @@ local info = wibox.widget {
 	widget = wibox.container.margin,
 }
 
--- Systray
+ --Systray
 local systray = wibox.widget {
-	{
-		{
-			{
+  {
+    {
+      {
         wibox.widget.systray,
-				layout = wibox.layout.fixed.horizontal,
-			},
-			margins = {top = dpi(2), bottom = dpi(2), left = dpi(6), right = dpi(6)},
-			widget = wibox.container.margin,
-		},
-		shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,8) end,
-		bg = beautiful.bg_alt,
-		widget = wibox.container.background,
-	},
-	margins = {top = dpi(6), bottom = dpi(6)},
-	widget = wibox.container.margin,
+        layout = wibox.layout.fixed.horizontal,
+      },
+      widget = wibox.container.margin,
+    },
+    shape = function(cr,w,h) gears.shape.rounded_rect(cr,w,h,8) end,
+    bg = beautiful.bg_alt,
+    widget = wibox.container.background,
+  },
+  margins = {top = dpi(6), bottom = dpi(6)},
+  widget = wibox.container.margin,
 }
 
 -- Right
@@ -89,7 +88,7 @@ local function get_bar(s)
 		ontop = false,
 		width = s.geometry.width,
 		height = dpi(60),
-		y = s.geometry.height - dpi(60),
+    y = s.geometry.height - dpi(60),
 		bg = beautiful.bg,
 		type = 'dock'
 	}

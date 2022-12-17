@@ -9,7 +9,7 @@ local dpi = beautiful.xresources.apply_dpi
 naughty.config.defaults.ontop = true
 naughty.config.defaults.screen = awful.screen.focused()
 naughty.config.defaults.timeout = 5
-naughty.config.defaults.title = "Notification"
+--naughty.config.defaults.title = "Notification"
 naughty.config.defaults.position = "top_right"
 naughty.config.defaults.border_width = 0
 
@@ -87,7 +87,7 @@ local function create_notif(n)
 
 	local container = wibox.widget {
 		{
-			title,
+			--title,
 			{
 				icon,
 				space_h(dpi(10), icon_visibility),

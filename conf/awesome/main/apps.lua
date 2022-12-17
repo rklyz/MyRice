@@ -1,6 +1,7 @@
 local apps = {
-	terminal = "wezterm",
-	launcher = "rofi -show drun",
+	terminal = "alacritty",
+	--launcher = "rofi -show drun",
+	launcher = os.getenv( "HOME" ) .. "/.config/rofi/launcher/launcher.sh",
 	browser = "firefox",
 	picture = "feh",
 	fileManager = "thunar",
